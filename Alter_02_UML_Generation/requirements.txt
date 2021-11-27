@@ -1,0 +1,9 @@
+nlp
+spacy
+graphviz
+matplotlib
+pylint
+tensorflow
+sklearn
+xlsxwriter
+tensorflow-hub

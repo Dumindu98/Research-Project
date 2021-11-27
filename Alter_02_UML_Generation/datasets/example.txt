@@ -1,0 +1,9 @@
+Only valid data shall be entered into the system.  No invalid data shall be entered into the system.
+One insurance company shall not be able to view another insurance companys claim data.
+The product shall free of computer viruses.
+The system shall prevent malicious attacks including denial of service.
+The product must comply with Sarbanes-Oxley.
+The product shall comply with the estimatics laws relating to recycled parts usage.
+The product shall comply with insurance regulations regarding claims processing.
+The user shall search for the preferred repair facility using vehicle  vehicle location  and radius in miles
+The vehicle data shall include vehicle year  make  and model

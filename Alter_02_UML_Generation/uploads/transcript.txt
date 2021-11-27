@@ -1,0 +1,50 @@
+Speaker 1 (John) - Hello, I’m John. I’m business analysis of this company. It’s such a pleasure to meet you. This meeting is for the gather requirements of your web application.
+Speaker 2 (Paul) – Hello, I’m Paul. I’m a manager technical of our company. Thank for the inviting me for the meeting. 
+Speaker 1 (John) – We would like to start gather requirement session from you. 
+Speaker 2 (Paul) – Ok, I’ll give my fullest support for you.
+Speaker 1 (John) – Ok, what is the reason for your web application and what is the actual real-world problem.
+Speaker 2 (Paul) – Our company is item distribution company. So, we still don’t have an online platform for distribution purposes. We collect orders over the phone and distribute items through our agents. The payment method is cash on delivery. Therefore, we face lot of difficulties. We want to automate our ordering and distribution process.
+Speaker 1 (John) – It seems, you want online item ordering system. 
+Speaker 2 (Paul) – yes, of course
+Speaker 1 (John) – So can you explain about the stakeholders of the system and how they will order an item and pay for it.
+Speaker 2 (Paul) – Ok, we have several item categories such as mobile accessories, clothes, household items, beauty culture items etc. Customers should be able to order the items pay online via credit cards. After that they customers should be able to track their order. System shall let existing customers log into the website with their email address and password in under 5 seconds. The product shall comply with corporate User Interface Guidelines
+Speaker 1 (John) – So, you said customers are the main stakeholders of the system. So, they need to maintain a registered accounts. Am I right? 
+Speaker 2 (Paul) – Yes of cause. Every user of the system shall be authenticated and authorized. 
+Speaker 1 (John) – So, what are the major requirements do you want?
+Speaker 2 (Paul) – Some sites are more steps to follow to purchase an item. It is time consuming and not user friendliness. System shall have a professional appearance. So, customer should be able to follow minimum steps to purchase an item. And product shall have a consistent color scheme and fonts. system shall be intuitive and self explanatory. The product shall be easy for a realtor to learn. The product shall use symbols and words that are naturally understandable by the realtor community. The product shall be available during normal business hours. As long as the user has access to the client PC  the system will be available 99% of the time during the first six months of operation.
+Speaker 1 (John) – Yes exactly Paul. I’m agree with you.
+Speaker 2 (Paul) – Another thing is system should disputes System must be accessible by both internal and external users and Every user of the system shall be authenticated and authorized.
+Speaker 1 (John) – Ok Paul, we will consider about that. The system shall be used by realtors with no training.
+Speaker 2 (Paul) – You know item prices and the things are change time to time. And we should edit the content of the product and manage portfolios. It should include blog posts to promote the product. Therefore, we want highly customizable themes. System shall let customers cancel their account  process shall take no longer than 2 minutes.  Database will mark the account as inactive  and user will not be able to log into the website.
+Speaker 1 (John) – Okay we will create more customizable admin side and consider about your blog post promotions too.
+Speaker 2 (Paul) – You know quality customer experience will be more important than price and products. So, there should be an intuitive user interface that can provide our clients with a fast and convenient shopping experience. The product shall be able to support multiple remote users.
+Speaker 1 (John) – Exactly. Good customer experience helps to retain your existing buyers and increase your sales too. We will use easy-to-use interface for the system.
+Speaker 2 (Paul) – You know customers are more likely to purchase a product if they know how to use it or know how to worked for others. So, it is necessary to have detailed and effective testimonials about the product along with the existing users’ reviews and comments on the product.
+Speaker 1 (John) – Yes Paul. We will be enabling your customers to give a quick review and displaying lucid product comparison. So, it generates lot of trust in your items. 
+Speaker 2 (Paul) – Yes John. It is correct. That’s the exact requirement that I have want. 
+Speaker 1 (John) – What are any other requirements do you want?
+Speaker 2 (Paul) – Yes John, the system should be connected popular social networks like Facebook and Instagram, as well as include fields for the product ratings and reviews. Another thing is customers should be able to chat and instantly receive answers to their questions. So, it can reduce the number of calls to live operators. The product shall be able support 1000 simultaneous users. The product shall allow the user to view previously downloaded search results.
+Speaker 1 (John) – Ok, we can design a chatbot for it. It will answer the customers frequently asked questions. The chatbot is best solution for it. So, what are the payment methods do you like to apply?
+Speaker 2 (Paul) – Customers should be able to pay through their credit or debit cards online. Or cash on delivery method should be okay. So, the customers should be able to select any payment method after selecting their items. The system shall prevent malicious attacks including denial of service.
+Speaker 1 (John) - Yes, I got the point. Do you have any other requirements?
+Speaker 2 (Paul) – Yes, please consider about the speed of the system. Most of ecommerce sites are stuck because of the network traffic. There is another thing I have to mention, customers should be able to track their delivery. The product shall run on the existing hardware for all environments.
+Speaker 1 (John) – Ok, we’ll consider about your requirement Paul.
+Speaker 2 (Paul) – Another thing is personalization. So, the site should change based on the individual’s historical behavior in both browsing and buying. The product shall be available for use 24 hours per day  365 days  per year. The system shall offer the ability to pause and resume the refresh of data.
+Speaker 1 (John) - Yes Paul that’s good. We can personalize it in better way. It is based on data the user gives you by visiting your site, such as previous search items, purchase history geographical location and their browsing history too. So, we can integrate third party personalization tool into your system. All actions that modify an existing dispute case must be recorded in the case history.
+Speaker 2 (Paul) – Yes that’s the exact requirement. The other thing is the customers privacy and the security. They enter their credit card details to the system. So, the security is must.
+Speaker 1 (John) - Yes of cause. All the sensitive data will be saved in a private database which can access only few admins. And we consider about the data integrity and retention as well. 
+Speaker 2 (Paul) – Yes John it’s sounds good. So that’s all the main requirements that we want. So, what is your opinion about this system. 
+Speaker 1 (John) – Yeah, I think all main requirements are covered. I want to say about the quality. Don’t worry we will develop this to a good quality standard. We ensure the system can scale to meet expected traffic and order volume at normal and peak times. So, we will maintain scalability and performance for it. And also, we ensure that the platform is extended in such a way to make future development feasible. The product shall be supported using the corporate support center.
+Speaker 2 (Paul) – Yes agree with you. That’s the points we are looking for.
+Speaker 1 (John) – Ok, we will contact you in designing phase as well. We can provide the prototypes of the system. 
+Speaker 2 (Paul) – Yes, contact me if you have any doubts. 
+Speaker 1 (John) - Ok, thank you. 
+Speaker 2 (Paul) – Thank you. 
+
+
+
+
+
+
+
+

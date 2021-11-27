@@ -1,0 +1,13 @@
+Patient should be able to login to the e-channeling site. 
+Patient should be able to check the home page of the system.
+Patient should be able to enter records of the disease.
+Patient should be able to check availability of the doctors.
+Patient should be able to put an appointment the doctor.
+Patient should be able to do the payment via credit card.
+Patient should be able to give a feedback to the doctor. 
+Admin should be able to login to the e-channeling site. 
+Admin should be able to view and manage doctor appointments.
+Admin should be able to check the payments.
+Admin should be able to reply to user feedbacks.
+Nurse should be able to login to the e-channeling site. 
+Nurse should be able to check the prescription | include: records of the disease.

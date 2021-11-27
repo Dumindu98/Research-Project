@@ -1,0 +1,68 @@
+Iâ€™m business analysis of this company.
+This meeting is for the gather requirements of your web application.
+Iâ€™m a manager technical of our company.
+Thank for the inviting me for the meeting.
+Speaker 2 (Paul) â€
+“ Our company is item distribution company.
+The payment method is cash on delivery.
+Speaker 1 (John) â€
+Customers should be able to order the items pay online via credit cards.
+After that they customers should be able to track their order.
+System shall let existing customers log into the website with their email address and password in under 5 seconds.
+The product shall comply with corporate User Interface Guidelines Speaker 1 (John) â€
+So, they need to maintain a registered accounts.
+Speaker 2 (Paul) â€
+Every user of the system shall be authenticated and authorized.
+Speaker 2 (Paul) â€
+“ Some sites are more steps to follow to purchase an item.
+It is time consuming and not user friendliness.
+System shall have a professional appearance.
+So, customer should be able to follow minimum steps to purchase an item.
+And product shall have a consistent color scheme and fonts.
+system shall be intuitive and self explanatory.
+The product shall be easy for a realtor to learn.
+The product shall use symbols and words that are naturally understandable by the realtor community.
+The product shall be available during normal business hours.
+As long as the user has access to the client PC  the system will be available 99% of the time during the first six months of operation.
+Speaker 1 (John) â€
+Speaker 2 (Paul) â€“ Another thing is system should disputes System must be accessible by both internal and external users and Every user of the system shall be authenticated and authorized.
+The system shall be used by realtors with no training.
+Speaker 2 (Paul) â€
+It should include blog posts to promote the product.
+System shall let customers cancel their account  process shall take no longer than 2 minutes.
+Database will mark the account as inactive  and user will not be able to log into the website.
+Speaker 1 (John) â€
+So, there should be an intuitive user interface that can provide our clients with a fast and convenient shopping experience.
+The product shall be able to support multiple remote users.
+Speaker 1 (John) â€“ Exactly.
+Good customer experience helps to retain your existing buyers and increase your sales too.
+Speaker 2 (Paul) â€
+So, it is necessary to have detailed and effective testimonials about the product along with the existing usersâ€™ reviews and comments on the product.
+Speaker 1 (John) â€
+So, it generates lot of trust in your items.
+Speaker 2 (Paul) â€
+Another thing is customers should be able to chat and instantly receive answers to their questions.
+So, it can reduce the number of calls to live operators.
+The product shall be able support 1000 simultaneous users.
+The product shall allow the user to view previously downloaded search results.
+It will answer the customers frequently asked questions.
+The chatbot is best solution for it.
+Speaker 2 (Paul) â€“ Customers should be able to pay through their credit or debit cards online.
+Or cash on delivery method should be okay.
+So, the customers should be able to select any payment method after selecting their items.
+The system shall prevent malicious attacks including denial of service.
+Most of ecommerce sites are stuck because of the network traffic.
+The product shall run on the existing hardware for all environments.
+Speaker 2 (Paul) â€“ Another thing is personalization.
+So, the site should change based on the individualâ€™s historical behavior in both browsing and buying.
+The product shall be available for use 24 hours per day  365 days  per year.
+The system shall offer the ability to pause and resume the refresh of data.
+All actions that modify an existing dispute case must be recorded in the case history.
+The other thing is the customers privacy and the security.
+They enter their credit card details to the system.
+So, the security is must.
+All the sensitive data will be saved in a private database which can access only few admins.
+Speaker 2 (Paul) â€
+The product shall be supported using the corporate support center.
+Speaker 2 (Paul) â€
+Speaker 2 (Paul) â€

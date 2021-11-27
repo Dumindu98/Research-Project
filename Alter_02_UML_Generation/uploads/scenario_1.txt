@@ -1,0 +1,15 @@
+Client should be able to login to the system.
+Client should be able to check the home page.
+Client should be able to play the site demo video.
+Client should be able to add items to the cart.
+Client should be able to payment the item.
+Client should be able to add delivery details.
+Client should be able to give a feedback for the system.
+Client should be able to check the seller details in about us.
+Client should be able to contact the seller to request more items.
+Admin should be able to login to the system | extend: check the home page.
+Admin should be able to view and manage cart items | include: check the payments and sold items.
+Admin should be able to check the payments and sold items.
+Admin should be able to reply to user feedbacks.
+Courier should be able to login to the system.
+Courier should be able to record the deliver details | include: add delivery details.
