@@ -1,0 +1,224 @@
+{% extends 'header.html' %}
+{% block content %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Generate UMLs</h2>
+                    <ol>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li>Generate UMLs</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <!-- End Breadcrumbs -->
+
+        <div class="wrapper py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-11 d-flex justify-content-center"><img class="img-fluid w-75"
+                                                                                      src="static/img/notepad.png"
+                                                                                      alt="Testing Process One"></div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-11 d-flex justify-content-center">
+                                <img class="img-fluid w-75" src="static/img/testing-process.png"
+                                     alt="Testing Process Two">
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                {#                                <a href="#"><img#}
+                                {#                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"#}
+                                {#                                        border="0" alt="animated-arrow-image-0339"/></a>#}
+                                {#                            </div>#}
+                            </div>
+                        </div>
+                        {#                    <div class="col-md-4">#}
+                        {#                        <div class="row">#}
+                        {#                            <div class="col-md-1">#}
+                        {##}
+                        {#                            </div>#}
+                        {#                            <div class="col-md-11">#}
+                        {#                                <img class="img-fluid" src="static/img/video-conference-three.png"#}
+                        {#                                     alt="Testing Process Three">#}
+                        {#                            </div>#}
+                        {##}
+                        {#                        </div>#}
+                        {#                    </div>#}
+                    </div>
+                </div>
+            </div>
+            <div class="container d-flex justify-content-center py-5">
+        <div class="col-3">
+            <div class="topic d-flex justify-content-center pb-3 align-items-baseline">
+                <span class="text-center fw-bold" style="font-size: 1.5rem;">User Guidance </span>&ensp;
+                <i class="fa fa-check-circle tooltip" aria-hidden="true">
+                                <span>
+                                    <img class="justify-content-center w-50 d-block m-auto"
+                                         src="static/img/warning.png">
+                                    <p class="text-center lh-base" style="font-size: 1.5rem;">Please follow the user guide before start the process</p>
+                                                    </span>
+                </i></div>
+            <a href="static/img/user-guide-reqdoc.pdf" target="_blank">
+                <div class="card img__wrap" style="border: dotted;">
+                    <img class="img__img  img-fluid p-5"
+                         src="https://img.icons8.com/glyph-neue/64/000000/user-manual.png"/>
+                    <div class="img__description_layer">
+                        <h5 class="img__description" style="font-weight: 800;font-size: 1.8rem;">View PDF </h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+            <div class="container pt-5 pb-2">
+                <div class="topic d-flex justify-content-center pb-3 align-items-baseline">
+                            <span class="text-center fw-bold" style="font-size: 2rem;">Upload a User Scenario Here</span>&ensp;
+                            <i class="fa fa-check-circle tooltip" aria-hidden="true">
+                                <span style="margin-left: 30%; margin-top: 40px;">
+                                    <img class="justify-content-center w-100" src="static/img/scenario.png">
+                                    <p class="">Upload or drag & drop your human narrated user scenario from the user requirements. The file should be in text(.txt) format </p>
+                                                    </span>
+                                                </i></div>
+                <div class="my-5 file-upload-wrapper">
+                    <div class="input-group mb-3" style="padding: 0 25%;">
+                        <input type="file" class="form-control" id="scenarioFile" placeholder="Recipient's username"
+                               aria-label="Recipient's username" aria-describedby="basic-addon2" accept='text/plain'
+                               onchange='openFile(event)'>
+                    </div>
+                    <!--<div class="custom-file overflow-hidden rounded-pill mb-5 w-50 d-block m-auto">
+                    <input type="file" class="rounded-pill" accept='text/plain' onchange='openFile(event)'>
+                    <label for="customFile" class="custom-file-label rounded-pill">Choose file</label>
+                  </div>-->
+
+                    <div class="content mt-4">
+                        <div id='output'
+                             style="border: 1px solid #000; border-radius: 10px; overflow-y: scroll; max-height: 300px; height: 300px; padding: 2% 3%;">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid" style="padding: 0 15%;">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item border-0">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button type="submit" onclick="processUmlGen()" class="btn orange-background text-white d-block m-auto"
+                                    style="padding: 10px 50px;" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                Proceed
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse mt-3" aria-labelledby="headingOne"
+                           data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="image-one">
+                                   <h2 class="text-center fw-bold">Use Case Diagram</h2>
+                                <div class="content my-3" style="border: 1px solid #FF5A09; padding: 2%;">
+                                    <img class="img-fluid my-3 d-block m-auto" src="static/img/loader.gif" id="useCaseImgTag" onclick="openWireframeIntro(this)"
+                                     alt="Use Case Diagram"/>
+                                </div>
+                                <a id="useCaseDownloadBtn" download>
+                                    <div id="btn-url-proceed" type="submit" class="btn orange-background text-white d-block m-auto w-25" style="padding: 10px 50px;">
+                                        Download
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="image-two pt-5">
+                                   <h2 class="text-center fw-bold">Class Diagram</h2>
+                                <div class="content my-3" style="border: 1px solid #FF5A09; padding: 2%;">
+                                    <img class="img-fluid my-3 d-block m-auto" src="static/img/loader.gif" id="classDiagramImgTag" onclick="openWireframeIntro(this)"
+                                     alt="Class Diagram"/>
+                                </div>
+                                <a id="classDiagramDownloadBtn" download>
+                                    <div id="btn-url-proceed" type="submit" class="btn orange-background text-white d-block m-auto w-25" style="padding: 10px 50px;">
+                                        Download
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="image-three pt-5">
+                                   <h2 class="text-center fw-bold">Activity Diagram</h2>
+                                <div class="content my-3" style="border: 1px solid #FF5A09; padding: 2%;">
+                                    <img class="img-fluid my-3 d-block m-auto" src="static/img/loader.gif" id="activityDiagramImgTag" onclick="openWireframeIntro(this)"
+                                     alt="Activity Diagram"/>
+                                </div>
+                                <a id="activityDiagramDownloadBtn" download>
+                                    <div id="btn-url-proceed" type="submit" class="btn orange-background text-white d-block m-auto w-25" style="padding: 10px 50px;">
+                                        Download
+                                    </div>
+                                </a>
+                                </div>
+                                <!-- <div class="image-four pt-5">
+                                   <h2 class="text-center fw-bold">Sequence Diagram</h2>
+                                <div class="content my-3" style="border: 1px solid #FF5A09; padding: 2%;">
+                                    <img class="img-fluid my-3 d-block m-auto" src="static/img/Sequence Diagram.jpg"
+                                     alt="Sequence Diagram"/>
+                                </div>
+                                <a href="static/img/Sequence Diagram.jpg" download>
+                                    <div id="btn-url-proceed" type="submit" class="btn orange-background text-white d-block m-auto w-25" style="padding: 10px 50px;">
+                                        Download
+                                    </div>
+                                </a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+    <a href="{% url 'generate-requirement-doc' %}" target="_blank">
+                <button type="submit" class="btn orange-background text-white d-block m-auto"
+                                    style="padding: 10px 30px; margin-bottom: 5% !important; margin-top: 5% !important">
+                       Extract Requirements
+                            </button></a>
+    <div class="container d-flex justify-content-end mt-5">
+                <a href="{% url 'wireframe-intro' %}">
+                    <div type="submit" class="btn bg-light text-white d-block m-auto"
+                                    style="padding: 10px 50px;" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <img src="https://img.icons8.com/material-outlined/30/FF5A09/double-right.png">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        </div>
+
+<script>
+            $(document).ready(function () {
+                $("#useCaseImgTag").click(function () {
+                    console.log('In openWireframeIntro');
+                    var img_src = $('#useCaseImgTag').attr("src")
+                    window.location.href = "/wireframe-intro?diagram="+img_src;
+                })
+                $("#classDiagramImgTag").click(function () {
+                    console.log('In openWireframeIntro');
+                    var img_src = $('#classDiagramImgTag').attr("src")
+                    window.location.href = "/wireframe-intro?diagram="+img_src;
+                })
+                $("#activityDiagramImgTag").click(function () {
+                    console.log('In openWireframeIntro');
+                    var img_src = $('#activityDiagramImgTag').attr("src")
+                    window.location.href = "/wireframe-intro?diagram="+img_src;
+                })
+            })
+        </script>
+
+
+
+{% endblock %}
+         </main>

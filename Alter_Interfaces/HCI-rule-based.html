@@ -1,0 +1,260 @@
+{% extends 'header.html' %}
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>HCI Rule Based Expert System</h2>
+                    <ol>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li>HCI Rule Based Expert System</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <div class="wrapper py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-11"><img class="img-fluid" src="static/img/testing-cover-one.png"
+                                                        alt="Testing Process One"></div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <img class="img-fluid" src="static/img/testing-process.png" alt="Testing Process Two">
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-1">
+
+                            </div>
+                            <div class="col-md-11">
+                                <img class="img-fluid" src="static/img/testing-cover-three.png"
+                                     alt="Testing Process Three">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" style="padding: 0 10%;">
+            <div class="content my-5">
+                <div id="wrapper">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-5">
+                            <div id="theImage" class="image d-flex align-items-center">
+                                <div class="drag-area">
+                                    <div class="icon"><img class="img-fluid w-100 d-block m-auto"
+                                                           src="static/img/excel-sample.png"/></div>
+                                </div>
+                            </div>
+                            <div class="button py-5">
+                                <button id="btn-url-proceed" type="submit"
+                                        class="btn orange-background text-white d-block m-auto"
+                                        style="padding: 10px 50px;"
+                                        onclick=afterrr();>
+                                    Check HCI Rules
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="width: 10%;">
+                            <div class="image d-flex justify-content-center align-items-center">
+                                <img id="myIcon" src="" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <!--<div class="content" style="height: 500px; border: 1px dashed #000;">
+                                <img style="max-height: 300px;" src="" alt="Detected Image">
+                            </div>-->
+                            <div class="content" style="height: 500px; border: 1px solid #000;">
+                                <img id="myImage" src=""
+                                     style="width: 100%; max-height: 500px; max-width: 700px; object-fit: fill; border-radius: 5px; padding: 3%;">
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="button py-5">
+                                        <form id="aim-url-form" novalidate="novalidate" class="needs-validation">
+                                            <div role="group" class="input-group  d-flex justify-content-end">
+                                                <a href="data:text/plain;charset=UTF-8,Your%20Website%20is%20Applicable%20with%20HCI%20Principles but you should to consider about Color Palette of your Interface!"
+                                                   style="padding: 10px 50px;"
+                                                   class="btn orange-background text-white d-block m-auto"
+                                                   download="Expert Advice.txt">
+                                                    Download
+                                                </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-6"></div>
+                                        <div class="col-6"><div class="button py-5">
+                                        <form id="aim-url-form" novalidate="novalidate" class="needs-validation">
+                                            <div role="group" class="input-group  d-flex justify-content-end">
+                                                <a href="{% url 'HCI-results-representation' %}">
+                                                    <div class="btn orange-background text-white d-block m-auto" style="padding: 10px 50px;">Preview
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </form>
+                                    </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <div active="" class="card mb-4"><!----><!---->
+                <header role="tab" class="card-header p-0">
+                    <div variant="cat-one" block="" href="#" class="rounded" aria-controls="cat-one-accordion"
+                         aria-expanded="true" role="button" style="padding: 2%; background: #f2f2f2;"><img src="https://img.icons8.com/carbon-copy/50/FF5A09/brain.png"><span class="title"
+                                                                                               style="font-size: 1.5rem; "> Add New Rule for Expert System</span>
+                    </div>
+                </header>
+                <div id="cat-one-accordion" class="collapse show" role="tabpanel">
+                    <div class="card-body"><!----><!---->
+                        <form style="padding: 0 15%;">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Rule Id</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Rule Name</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Range</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Description</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Judgement</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+
+                        </form>
+                    </div>
+                </div><!----><!----></div>
+
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button type="submit" class="btn orange-background text-white d-block mr-auto"
+                                style="padding: 10px 50px;" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Add New
+                            Rule
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse mt-3" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample" style="border: 1px solid rgba(0,0,0,.125);">
+                        <div class="accordion-body">
+                            <section id="featured-services" class="featured-services">
+                                <div class="container-fluid" style="padding: 0 15%;">
+                                    <div class="content">
+                                        <div class="my-3" data-aos="fade-up"
+                                             data-aos-offset="300" data-aos-easing="ease-in-sine"
+                                             data-aos-duration="700">
+                                            <a href="#">
+                                                <div class="card h-100" style="border: 1px solid #FF5A09;">
+                                                    <div class="icon-box" style="background: #ff5a090d !important;">
+                                                        <div class="icon"><img src="https://img.icons8.com/ios/50/FF5A09/empty-flag.png"/>
+                                                        </div>
+                                                        <h4 class="title">Rule One</h4>
+                                                        <p class="description">Gather initial user requirements using
+                                                            video conferencing
+                                                            and generate Use case, Class, Activity and Sequence
+                                                            diagrams.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="" data-aos="fade-up"
+                                             data-aos-offset="300" data-aos-easing="ease-in-sine"
+                                             data-aos-duration="1500">
+                                            <a href="#">
+                                                <div class="card h-100">
+                                                    <div class="icon-box">
+                                                        <div class="icon"><img src="https://img.icons8.com/ios/50/FF5A09/empty-flag.png"/>
+                                                        </div>
+                                                        <h4 class="title">Rule Two</h4>
+                                                        <p class="description">Use the Use case, Class, Activity and
+                                                            Sequence diagrams
+                                                            created in the previous phase to generate wireframes.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="my-3" data-aos="fade-up"
+                                             data-aos-offset="300" data-aos-easing="ease-in-sine"
+                                             data-aos-duration="2100">
+                                            <a href="#">
+                                                <div class="card h-100">
+                                                    <div class="icon-box">
+                                                        <div class="icon"><img src="https://img.icons8.com/ios/50/FF5A09/empty-flag.png"/>
+                                                        </div>
+                                                        <h4 class="title">Rule Three</h4>
+                                                        <p class="description">Minim veniam, quis nostrud exercitation
+                                                            ullamco laboris nisi
+                                                            ut aliquip ex ea commodo consequat tarad limino ata</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="" data-aos="fade-up"
+                                             data-aos-offset="300" data-aos-easing="ease-in-sine"
+                                             data-aos-duration="2800">
+                                            <a href="#">
+                                                <div class="card h-100">
+                                                    <div class="icon-box">
+                                                        <div class="icon"><img src="https://img.icons8.com/ios/50/FF5A09/empty-flag.png"/>
+                                                        </div>
+                                                        <h4 class="title">Rule Four</h4>
+                                                        <p class="description">Duis aute irure dolor in reprehenderit in
+                                                            voluptate velit
+                                                            esse cillum dolore eu fugiat nulla pariatur</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section><!-- End Featured Services Section -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
+
+</main>

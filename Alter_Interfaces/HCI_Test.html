@@ -1,0 +1,840 @@
+{% extends 'header.html' %}
+{% load static %}
+{% load my_filters %}
+
+{% block header %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+{#    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"#}
+{#            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"#}
+{#            crossorigin="anonymous">#}
+{#    </script>#}
+
+    <style>
+        .ui-image-card .card-header{
+            color: #ff8433 !important;
+            background: #37474f;
+        }
+        .ui-image-card:hover {
+            border: 1px #ff8433 solid;
+        }
+        .ui-image-card:active{
+            font-weight: bolder;
+        }
+
+        table.table thead tr th:last-child{
+            min-width: 150px;
+        }
+
+        table.table tbody i{
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        table.table tbody i.tooltip {
+            display: contents;
+            outline:none;
+            margin-left: 10px !important;
+        }
+        table.table tbody i.tooltip:hover {text-decoration:none;}
+        table.table tbody i.tooltip span {
+            z-index:10;
+            display:none;
+            padding:14px 20px;
+            margin-top:30px;
+            margin-left:-100px;
+            width:300px;
+            line-height:16px;
+        }
+        table.table tbody i.tooltip:hover span{
+            display:inline; position:absolute;
+            color:#EEE;
+            background: black;
+            opacity: 0.8 ;
+        }
+        table.table tbody i.tooltip span img{
+            opacity: 1 !important;
+            width: 250px;
+        }
+        table.table tbody i.tooltip p{
+            font-size: small;
+        }
+
+
+    </style>
+
+{% endblock %}
+
+
+{% block script %}
+    <script>
+        {% comment %}
+        $(document).ready(function() {
+            $('#sub_metrics').toggle(false);
+            setRuleListItemColor();
+        });
+
+        function showHideSubMetrics(chkbox) {
+            $(chkbox).closest('tr').find('#sub_metrics').toggle($(chkbox).is(":checked"));
+        }
+        {% endcomment %}
+
+        $(document).ready(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        $('.ui-image-card').click(function (e) {
+            e.preventDefault()
+            console.log('card clicked: ', e.target.id)
+            let $this = $(this);
+            let selected_icon = '<i class="fa fa-lg fa-check-circle mr-0 pull-right" style="color: #f66c35; padding: 2px !important;"></i>';
+            let card_header = $this.children('.card-header')
+            $('.ui-image-card > i.fa').remove();
+            card_header.append(selected_icon);
+            $("input#selected_image").val(e.target.id);
+            console.log('selected image: ', $('#selected_image'))
+        })
+
+
+    </script>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <main id="main">
+
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>HCI Testing</h2>
+                    <ol>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li>Rule Selection</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrapper my-5">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <img class="img-fluid" src="{% static 'img/hci-test-one.png' %}" alt="Testing Process One">
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <img class="img-fluid" src="{% static 'img/testing-cover-one.png' %}" alt="Testing Process Two">
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-1">
+
+                            </div>
+                            <div class="col-md-11">
+                                <img class="img-fluid" src="{%  static 'img/testing-cover-three.png' %}" alt="Testing Process Three">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="wrapper my-5" >
+            <div class="container ui-image-list py-5 px-3" style="border: 2px #000000 dotted ">
+                <div class="justify-content-center" >
+                    <div class="row mx-0 justify-content-center">
+                        {% for image in image_list %}
+                        <div id="{{ image }}" class="card col col-md-3 px-0 ui-image-card mx-2 mb-3" >
+                            <div class="card-header py-2">
+                                <span class="text-capitalize">{{ image|cut:'.jpg' }}</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <img src="{% static 'images/' %}{{ image }}" id="{{ image }}" class="card-img m-0" alt="{{ image }}">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+
+            <div class="mb-3">
+                {% for message in messages %}
+                    <div class="alert alert-danger message alert-dismissible" data-value="{{ message.extra_tags }}" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <form id="hci-rules-form" action="/result" method="post" class="">
+                {% csrf_token %}
+
+                <input type="hidden" id="selected_image" name="selected_image" value="no_image">
+
+                <div role="tablist" class="tablist">
+
+                    <div active="" class="card mb-4">
+
+                        <header role="tab" class="card-header p-0">
+                            <div variant="cat-one" block="" href="#" class="rounded"
+                                 aria-controls="cat-one-accordion"
+                                 aria-expanded="true" role="button" style="padding: 2%; background: #f2f2f2;"><img
+                                    src="https://img.icons8.com/ios/50/FF5A09/paint-palette.png"/><span
+                                    class="title"
+                                    style="font-size: 1.5rem; ">&ensp;Colour Perception</span>
+                            </div>
+                        </header>
+
+                        <div id="cat-one-accordion" class="collapse show" role="tabpanel">
+                            <div class="card-body">
+
+                                <table class="table table-striped table-bordered table-hover table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">Selected</th>
+                                        <th width="100px">Metric</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input id="hci_rules_1" name="hci_rules"
+                                                        type="checkbox" autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule01_Number_of_Colors">
+                                                    <label class="custom-control-label" for="hci_rules_1"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Unique Number of RGB Colors
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_1.png' %}" />
+                                                        <p class="">Tetric help to detect number of unique colours in RGB in spectrum is an indication of colour variance. Every unique color is counted. If same color occur more than 5 times for website, it is taken into account for the final count. If website has more images that might score high color amount.</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Detect Number of unique colours in RGB in spectrum
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_2" name="hci_rules"
+                                                        type="checkbox" autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule02_Average_of_HSV">
+                                                    <label class="custom-control-label" for="hci_rules_2"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Average of HSV value
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_2.jpg' %}" />
+                                                        <p class="">HSV stand for Hue, Saturation and Value scale provides a numerical readout of your image that corresponds to the color names contained therein. Because this metric is more closely with the human visual system. These metric helps to detect average and standard deviation for each channel in HSV. Many researchers have found hue and saturation channels to correlated with aesthetic impression..</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Detect average and standard deviation for each channel in HSV
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_3" name="hci_rules"
+                                                        type="checkbox" autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule03_Uniqness_of_HSV">
+                                                    <label class="custom-control-label" for="hci_rules_3"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Number of Unique Colours in the HSV Spectrum
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_3.png' %}" />
+                                                        <p class="">The HSV (Hue, Saturation, Value) colour space aligns more closely with the human visual system.  This metric reports the number of unique colours per channel in HSV. Unlike the other HSV metric, no direct empirical evidence exists for this metric. Note that the metric correlates highly with the number of colours in the RGB space.</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                This metric looks at the number of unique values in the HSV colour.
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_4" name="hci_rules"
+                                                        type="checkbox" autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule04_Average_of_LAB">
+                                                    <label class="custom-control-label" for="hci_rules_4"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                 Average of LAB Colour Range
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_4.png' %}" />
+                                                        <p class="">LAB Color is a more accurate color space.It is use three values (L,a,and b) to specifiy colors.RGB and CMYK color spaces specify a color by telling a device how much of each color is needed.Lab Color works more like the human eye..</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                This metric detect LAB color range of your user interface
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_5" name="hci_rules"
+                                                        type="checkbox" autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule05_Hassler_Sustrunk">
+                                                    <label class="custom-control-label" for="hci_rules_5"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Colourfulness in natural image
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_5.png' %}" />
+                                                        <p class="">This metric was proposed by Hasler and Susstrunk .This metric is proven to have a very high correspondence to the users perception (95%). It relies on the RGYB color spectrum and mainly looks at the average standard deviation for all value. The higher the STD is, the more colourfulthe image is perceived. The nested loop however make it more computational heavy than it was originally intended.
+Also it should be noted that this does not the Hue into account, which has been proven to be a significant factor.</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                 This metric compute RGYB colour spectrum and mainly comprises standard deviations
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_6" name="hci_rules"
+                                                        type="checkbox" autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule06_Static_Clusters">
+                                                    <label class="custom-control-label" for="hci_rules_6"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                 Static Colour Clusters
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_6.png' %}" />
+                                                        <p class="">Static colour clusters refers to the number of pre-determined colour clusters in the image. Clustering is based on slicing of RGB channels. It indicates the number of dominant colours but is confounded by colour variance.  .</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                               The number of pre-determined colour clusters in the image
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_7" name="hci_rules"
+                                                        type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule07_Dynamic_Clusters">
+                                                    <label class="custom-control-label" for="hci_rules_7"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                 Dynamic Colour Clusters
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_7.png' %}" />
+                                                        <p class="">Indicates the number of colour clusters in an image and the average number of colours within each cluster. Colours are clustered recursively, using as criteria their distance in a colour cube. Only clusters with more than 5 values are included in the final count. The number of colours per cluster is shown to correlate with aesthetic perception. The number of dynamic clusters of colors after color reduction (more than 5 pixels). If a difference between two colors in a color cube is less than or equal to 3, two colors are united in the same cluster, which continues recursively for all colors. Only clusters containing more than 5 values are counted..</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                             Count the number of dynamic clusters of colors after color reduction (more than 5 pixels).
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_8" name="hci_rules" type="checkbox"
+                                                        onchange="showHideSubMetrics(this);"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule08_Standard_Deviation_in_Luminance">
+                                                    <label class="custom-control-label" for="hci_rules_8"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                 Luminance Standard Deviation
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_8.jpg' %}" />
+                                                        <p class=""> This is the standard deviation of luminance over all pixels. It has been proven to not be statically relevant for the perceived colour variance of a webpage..</p>
+                                                    </span>
+                                                </i>
+
+{#                                                    <div id="sub_metrics" class="p-3">#}
+{#                                                        <div class=" form-group mx-sm-3 mb-0">#}
+{#                                                            <label for="rule8_value1">Luminance Value 1: </label>#}
+{#                                                            <input type="text" class="form-control mx-3 mb-0" id="rule8_value1" name="rule8_value1" aria-describedby="rule8_value1_help" placeholder="Enter a value">#}
+{#                                                        </div>#}
+{#                                                        <small id="rule8_value1_help" class="form-text text-muted mx-sm-3 mb-4 mt-0">put here help text for this field.</small>#}
+{#                                                        <hr/>#}
+{##}
+{#                                                        <div class="form-group mx-sm-3 mb-0">#}
+{#                                                            <label for="rule8_value2">Luminance Value 2: </label>#}
+{#                                                            <input type="text" class="form-control mx-3 mb-0" id="rule8_value2" name="rule8_value2" aria-describedby="rule8_value2_help" placeholder="Enter a value">#}
+{#                                                        </div>#}
+{#                                                        <small id="rule8_value2_help" class="form-text text-muted mx-sm-3 mb-4 mt-0">put here help text for this field.</small>#}
+{#                                                        <hr/>#}
+{##}
+{#                                                        <div class="form-group mx-sm-3 mb-0">#}
+{#                                                            <label for="rule8_value3">Luminance Value 3: </label>#}
+{#                                                            <input type="text" class="form-control mx-3 mb-0" id="rule8_value3" name="rule8_value3" aria-describedby="rule8_value3_help" placeholder="Enter a value">#}
+{#                                                        </div>#}
+{#                                                        <small id="rule8_value3_help" class="form-text text-muted mx-sm-3 mb-4 mt-0">put here help text for this field.</small>#}
+{#                                                    </div>#}
+                                            </td>
+                                            <td>
+                                                This metric indicates how much luminance varies across the image
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_9" name="hci_rules" type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule09_RGB_Color_Code">
+                                                    <label class="custom-control-label" for="hci_rules_9"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                 RGB color code
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_9.png' %}" />
+                                                        <p class="">RGB means Red Green and Blue, ie the primary colors in additive color synthesis.A RGB file consists in composite layers of RED,GREEN and BLUE,Each being coded on 256 levels from 0 to 255.For example, black corresponds to the levels R=255,G=255,B=255.</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                               This metric detect RGB color code of the User Interface.
+                                            </td>
+                                        </tr>
+
+
+                                        {% for rule in custom_rules|inCategory:'cp' %}
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="metric-checkbox custom-control custom-checkbox">
+                                                        <input name="hci_rules"
+                                                               id="{{ rule.id }}"
+                                                               type="checkbox"
+                                                               autocomplete="off"
+                                                               class="custom-control-input"
+                                                               value="{{ rule.rule_name }}">
+                                                        <label class="custom-control-label" for="{{ rule.id }}"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    {{ rule.title }}
+                                                    <i class="fa fa-info-circle tooltip">
+                                                        <span>
+                                                            <img class="justify-content-center" src="{% static '/tooltip_images/' %}{{ rule.rule_name }}{{ rule.image_type }}" />
+                                                            <p class="">{{ rule.expand_description }}</p>
+                                                        </span>
+                                                    </i>
+                                                </td>
+                                                <td>
+                                                   {{ rule.description }}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+
+                        <header role="tab" class="card-header p-0">
+                            <div variant="cat-two" block="" href="#" class="rounded"
+                                 aria-controls="cat-two-accordion"
+                                 aria-expanded="true" role="button" style="padding: 2%; background: #f2f2f2;">
+                                <img
+                                    src="https://img.icons8.com/ios/50/FF5A09/brain.png"/>
+                                <span class="title" style="font-size: 1.5rem;">&ensp;Perceptual Fluency</span>
+                            </div>
+                        </header>
+
+                        <div id="cat-two-accordion" class="collapse show" role="tabpanel">
+                            <div class="card-body"><!----><!---->
+
+                                <table class="table table-striped table-bordered table-hover table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">Selected</th>
+                                        <th width="100px" scope="col">Metric</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_10" name="hci_rules"
+                                                        type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule10_Edge_Density">
+                                                    <label class="custom-control-label" for="hci_rules_10"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                               Edge Density
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_10.jpeg' %}" />
+                                                        <p class="">Basically the Edge Density is really just a (local) average density,which you can either calculate over binarized images or,more common, over grey scale images.Edge density correlates with perception of clutter. It is computed as the ratio of pixels that align with an edge as compared to the total number of pixels in the image. Note that this metric does not take colour variance into account, unlike e.g. the feature congestion metric.the density of edges is so great that they obscure nodes, individual edges and even visual information beneath the graph.</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Ratio of pixels are regard as an edge compared to the total number of pixels in the image
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_11" name="hci_rules"
+                                                        type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule11_Edge_Congestion">
+                                                    <label class="custom-control-label" for="hci_rules_11"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Edge Congestion
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_11.png' %}" />
+                                                        <p class="">Basically the Edge Density is really just a (local) average density,which you can either calculate over binarized images or,more common, over grey scale images.Edge density correlates with perception of clutter. It is computed as the ratio of pixels that align with an edge as compared to the total number of pixels in the image. Note that this metric does not take colour variance into account, unlike e.g. the feature congestion metric.the density of edges is so great that they obscure nodes, individual edges and even visual information beneath the graph.</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Edge congestion indicates the ease with which main edges can be perceived.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_14" name="hci_rules"
+                                                        type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule14_JPEG_File_Size">
+                                                    <label class="custom-control-label" for="hci_rules_14"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                JPG File Size
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_12.png' %}" />
+                                                        <p class="">The file size (in jpg) is a good indication to indicate the clutter.Because JPG file size has some association with clutter perception. However, little evidence exists, and the metric is confounded by other factors.</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Detect JPG file size in Bytes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_13" name="hci_rules"
+                                                        type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule13_PNG_File_Size">
+                                                    <label class="custom-control-label" for="hci_rules_13"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                PNG File Size
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_13.jpeg' %}" />
+                                                        <p class="">The file size (in png) is a good indication to indicate the colour range. The higher the file size the more colourful the image is likely to be. Of course this is also depended on the size (in pixels). This function returns the file size in bytes. It does not account for the dimensions</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Detect PNG file size in Bytes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox">
+                                                    <input
+                                                        id="hci_rules_12" name="hci_rules" type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input"
+                                                        value="HCI_Rule12_Figure_Ground_Contrast">
+                                                    <label class="custom-control-label" for="hci_rules_12"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Figure-Ground Contrast
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_14.PNG' %}" />
+                                                        <p class="">Figure-ground contrast on a map is the distinction between one or more objects of interest(the figure) and the remainder of the map (the ground).During the vision-cognition process,people need to focus attention on particular objects,relegating the rest of the visual feild as unimportant (for the moment at least). Psychologists often use luminance or color contrast to manipulate perceptual fluency. For example, Reber et al.showed participants phrases in green or red on a white background (high contrast condition), and in yellow or light-blue color on a white background (low contrast condition). The high-contrast phrases were judged as true facts significantly above the chance level, whereas the low-contrast phrases were not. The authors attributed it to the difference in reading difficulty, and thus, processing fluency. Similarly, Reber et al. showed participants 70% black (high contrast) and 30% black (low contrast) words on a white background. In the high contrast scenario, the participants were significantly faster at detecting and recognizing words. Hall et al.explored text readability of web pages, and found white-black text-background combinations to be more readable than light- and dark-blue, or cyan-black combinations. However, the studies above did not measure contrast automatically</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Weighted sum of edge pixels divided by sum of edge pixels
+                                            </td>
+                                        </tr>
+
+                                        {% for rule in custom_rules|inCategory:'pf' %}
+                                            <tr>
+                                                <td class="text-center">
+                                                    <div class="metric-checkbox custom-control custom-checkbox">
+                                                        <input name="hci_rules"
+                                                               id="{{ rule.id }}"
+                                                               type="checkbox"
+                                                               autocomplete="off"
+                                                               class="custom-control-input"
+                                                               value="{{ rule.rule_name }}">
+                                                        <label class="custom-control-label" for="{{ rule.id }}"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    {{ rule.title }}
+                                                    <i class="fa fa-info-circle tooltip">
+                                                        <span>
+                                                            <img class="justify-content-center" src="{% static '/tooltip_images/' %}{{ rule.rule_name }}{{ rule.image_type }}" />
+                                                            <p class="">{{ rule.expand_description }}</p>
+                                                        </span>
+                                                    </i>
+                                                </td>
+                                                <td>
+                                                   {{ rule.description }}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+
+                        <header role="tab" class="card-header p-0">
+                            <div variant="cat-three" block="" href="#" class="rounded"
+                                 aria-controls="cat-three-accordion" aria-expanded="true" role="button"
+                                 style="padding: 2%; background: #f2f2f2;"><img
+                                    src="https://img.icons8.com/ios/50/FF5A09/compass--v2.png"/>
+                                <span class="title" style="font-size: 1.5rem;">&ensp;Visual Guidance</span>
+                            </div>
+                        </header>
+
+                        <div id="cat-three-accordion" class="collapse show" role="tabpanel">
+                            <div class="card-body">
+
+                                <table class="table table-striped table-bordered table-hover table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">Selected</th>
+                                        <th width="100px" scope="col">Metric</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="metric-checkbox custom-control custom-checkbox"><input
+                                                        id="hci_rules_15" name="hci_rules" type="checkbox"
+                                                        autocomplete="off"
+                                                        class="custom-control-input" value="HCI_Rule15_Saliency"><label
+                                                        for="hci_rules_15"
+                                                        class="custom-control-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Saliency
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_15.PNG' %}" />
+                                                        <p class="">Most models of visual search, whether involving overt eye movements or covert shifts of attention, are based on the
+#   concept of a saliency map, that is, an explicit two-dimensional map that encodes the saliency or conspicuity of
+#   objects in the visual environment. Competition among neurons in this map gives rise to a single winning location
+#   that corresponds to the next attended target. Inhibiting this location automatically allows the system to attend
+#   to the next most salient location</p>
+                                                    </span>
+                                                </i>
+                                            </td>
+                                            <td>
+                                                Predicts which areas attract attention when seeing the interface for the first time.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+
+                        <header role="tab" class="card-header p-0">
+                            <div variant="cat-four" block="" href="#" class="rounded"
+                                 aria-controls="cat-four-accordion"
+                                 aria-expanded="true" role="button" style="padding: 2%; background: #f2f2f2;"><img
+                                    src="https://img.icons8.com/dotty/60/FF5A09/accessibility2.png"/><span
+                                    class="title"
+                                    style="font-size: 1.5rem;">&ensp;Accessibility</span>
+                            </div>
+                        </header>
+
+                        <div id="cat-four-accordion" class="collapse show" role="tabpanel">
+                            <div class="card-body"><p></p>
+                                <table class="table table-striped table-bordered table-hover table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">Selected</th>
+                                        <th width="100px" scope="col">Metric</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td class="text-center">
+                                            <div class="metric-checkbox custom-control custom-checkbox"><input
+                                                    id="hci_rules_16" name="hci_rules" type="checkbox" autocomplete="off"
+                                                    class="custom-control-input" value="HCI_Rule16_Colour_Blindness"><label
+                                                    for="hci_rules_16"
+                                                    class="custom-control-label"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Colour Blindness
+                                                <i class="fa fa-info-circle tooltip">
+                                                    <span>
+                                                        <img class="justify-content-center" src="{% static '/tooltip_images/hci_rule_16.png' %}" />
+                                                        <p class="">Color vision deficiency (CVD) affects approximately 200 million people worldwide, compromising the ability of these
+#   individuals to effectively perform color and visualization-related tasks. This has a significant impact on their
+#   private and professional lives. We present a physiologically-based model for simulating color vision. Our model is
+#   based on the stage theory of human color vision and is derived from data reported in electrophysiological studies.
+#   It is the first model to consistently handle normal color vision, anomalous trichromacy, and dichromacy in a
+#   unified way. We have validated the proposed model through an experimental evaluation involving groups of color
+#   vision deficient individuals and normal color vision ones. Our model can provide insights and feedback on how to
+#   improve visualization experiences for individuals with CVD. It also provides a framework for testing hypotheses
+#   about some aspects of the retinal photoreceptors in color vision deficient individuals</p>
+                                                    </span>
+                                                </i>
+                                        </td>
+                                        <td>
+                                            Indicate information loss for users with colour vision deficiencies
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <a href="/create_rule" style="border: 2px dashed #dedede !important;" class="row my-4 mb-5 mx-1 py-4 border border-4 bg-light justify-content-center align-items-center">
+                    <div style="color: #535353" class="col col-1 fa fa-plus text-right fs-2"></div>
+                    <div style="color: #535353" class="col col-5 text-center fs-3 ">Add New HCI Rule</div>
+                </a>
+                <div class="row">
+                    <div class="col-4 d-flex justify-content-start ">
+                        <button type="button" class="btn orange-background text-white">Cancel</button>
+                    </div>
+                    <div class="col pull-right"></div>
+                    <div class="col-4 d-flex justify-content-end ">
+                        <button type="submit" class="btn orange-background text-white">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+{% endblock %}
+
+</main>
+

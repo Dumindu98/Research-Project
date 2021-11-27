@@ -1,0 +1,173 @@
+{% extends 'header.html' %}
+{% block content %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Generate Requirement Document</h2>
+                    <ol>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li>Generate Requirement Document</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <div class="wrapper py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-11 d-flex justify-content-center"><img class="img-fluid w-75"
+                                                                                      src="static/img/notepad.png"
+                                                                                      alt="Testing Process One"></div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-11 d-flex justify-content-center">
+                                <img class="img-fluid w-75" src="static/img/testing-process.png"
+                                     alt="Testing Process Two">
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                {#                                <a href="#"><img#}
+                                {#                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"#}
+                                {#                                        border="0" alt="animated-arrow-image-0339"/></a>#}
+                                {#                            </div>#}
+                            </div>
+                        </div>
+                        {#                    <div class="col-md-4">#}
+                        {#                        <div class="row">#}
+                        {#                            <div class="col-md-1">#}
+                        {##}
+                        {#                            </div>#}
+                        {#                            <div class="col-md-11">#}
+                        {#                                <img class="img-fluid" src="static/img/video-conference-three.png"#}
+                        {#                                     alt="Testing Process Three">#}
+                        {#                            </div>#}
+                        {##}
+                        {#                        </div>#}
+                        {#                    </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container pt-3 pb-2">
+            <div class="topic d-flex justify-content-center align-items-baseline">
+                            <h3 class="text-center fw-bold ">Upload a Transcript File Here </h3>&ensp;
+                            <i class="fa fa-check-circle tooltip" aria-hidden="true">
+                                <span style="margin-top: 50px; margin-left: 50px;">
+                                    <img class="justify-content-center w-75 d-block m-auto" src="static/img/trans.PNG">
+                                    <p class="text-center">Please upload or drag & drop a video interview transcript file in a valid text format (.txt)</p>
+                                                    </span>
+                                                </i></div>
+            <div class="mb-5 mt-2 file-upload-wrapper">
+                <form class="was-validated">
+                    <div class="custom-file d-block m-auto mt-4" style="width: 30%;cursor: pointer;">
+                         <input class="custom-file-label ms-4" type="file" name='file' class="custom-file-input"  id="transcriptFile" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" accept='text/plain' onchange='openFile(event)' style="cursor: pointer;opacity: 1;" required>
+                    </div>
+
+                        <div class="invalid-feedback text-success" style="padding-top: 17%">
+                           Please Select an Image.
+                        </div>
+                <!--<div class="custom-file overflow-hidden rounded-pill mb-5 w-50 d-block m-auto">
+                <input type="file" class="rounded-pill" accept='text/plain' onchange='openFile(event)'>
+                <label for="customFile" class="custom-file-label rounded-pill">Choose file</label>
+              </div>-->
+                 </form>
+                <div class="content mt-5">
+                    <div class="square"
+                         style="border: 1px solid #000; border-radius: 10px; overflow-y: scroll; max-height: 500px; height: 500px; padding: 2% 3%;">
+                        <div id="clear">
+                            <div id='output'
+                                 style="display: block !important;">
+                                ...
+
+                            </div>
+                        </div>
+                    </div>
+                    <button class="clear-text text-white ladda-button green expand-right" value="Clear Text" type="button" onclick="processTranscript()" style="padding: 10px 50px; font-size: 1.2rem; background-color: #FF5A09; border-radius: 10px; float: right; margin-top: 2%; margin-right: 2%;">
+                       <span class="label">Submit</span> <span class="spinner"></span>
+                    </button>
+                    <button class="clear-text text-white" value="Clear Text" type="submit" onclick="clearcontent('clear')" style="padding: 10px 50px; font-size: 1.2rem; background-color: #FF5A09; border-radius: 10px; float: right; margin-top: 2%; margin-right: 2%;">
+                        Clear Text
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container py-5">
+            <div class="content mt-4">
+                <div class="square"
+                     style="border: 1px solid #000; border-radius: 10px; overflow-y: scroll; max-height: 500px; height: 500px; padding: 2% 3%;">
+                    <div id="clear">
+                        <div id='transcriptOutput'
+                             style="display: block !important;">
+                            <textarea id="textarea">
+
+                            </textarea>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-auto">
+                <div class="d-flex justify-content-center my-2">
+                    <div id="btnSave" class="btn btn-default orange-background text-white" style="padding: 10px 50px;font-size: 1rem;">Save Document</div>
+            </div>
+            </div>
+{#            <div class="col-auto">#}
+{#                <div class="d-flex justify-content-center my-2">#}
+{#                <a href="{% url 'generate-umls' %}">#}
+{#                    <div class="btn btn-default orange-background text-white" style="padding: 10px 100px;font-size: 1rem;">Next</div>#}
+{#                </a>#}
+{#            </div>#}
+            </div>
+            </div>
+        </div>
+        </div>
+
+    <script>
+        const downloadToFile = (content, filename, contentType) => {
+                const a = document.createElement('a');
+                const file = new Blob([content], {type: contentType});
+
+                a.href = URL.createObjectURL(file);
+                a.download = filename;
+                a.click();
+
+                URL.revokeObjectURL(a.href);
+            };
+
+            document.querySelector('#btnSave').addEventListener('click', () => {
+                const div = document.querySelector('textarea');
+
+                downloadToFile(div.value, 'Requirement-Document.txt', 'text');
+            });
+
+    </script>
+
+{% endblock %}
+</main>

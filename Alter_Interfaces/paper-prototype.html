@@ -1,0 +1,177 @@
+{% extends 'header.html' %}
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Paper Prototype</h2>
+                    <ol>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li>Paper Prototype</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <div class="wrapper py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-11"><img class="img-fluid" src="static/img/web-interface-one.png"
+                                                        alt="Testing Process One"></div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <img class="img-fluid" src="static/img/testing-process.png" alt="Testing Process Two">
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <a href="#"><img
+                                        src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0339.gif"
+                                        border="0" alt="animated-arrow-image-0339"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-1">
+
+                            </div>
+                            <div class="col-md-11">
+                                <img class="img-fluid" src="static/img/web-interface-three.png"
+                                     alt="Testing Process Three">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="row">
+                        <div class="col-md-1 d-flex justify-content-center">
+                            <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleControls"
+                                    data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid w-100" src="static/img/wireframe-one.jpg"
+                                                 class="d-block w-100" alt="Wireframe Sample">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img class="img-fluid w-100" src="static/img/wireframe-two.jpg"
+                                                 class="d-block w-100" alt="Wireframe Sample">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img class="img-fluid w-100" src="static/img/wireframe-three.jpg"
+                                                 class="d-block w-100" alt="Wireframe Sample">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img class="img-fluid w-100" src="static/img/wireframe-one.jpg"
+                                                 class="d-block w-100" alt="Wireframe Sample">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img class="img-fluid w-100" src="static/img/wireframe-two.jpg"
+                                                 class="d-block w-100" alt="Wireframe Sample">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img class="img-fluid w-100" src="static/img/wireframe-three.jpg"
+                                                 class="d-block w-100" alt="Wireframe Sample">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 d-flex justify-content-center">
+                            <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleControls"
+                                    data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="container-fluid" style="padding: 0 5%;">
+               <div class="content my-5">
+                    <div id="wrapper">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-5">
+                                <div id="theImage" class="image d-flex align-items-center">
+                                    <div class="drag-area">
+                                        <div class="icon"><img class="img-fluid w-25 d-block m-auto"
+                                                               src="static/img/wireframe-icon.svg"/></div>
+                                        <header class="ash-text text-center" style="font-size: 25px;">Drag & Drop to Upload
+                                            Paper Prototype
+                                        </header>
+                                        <span class="text-dark">OR</span>
+                                        <button class="bg-dark text-white" style="font-size: 20px;">Browse
+                                            File
+                                        </button>
+                                        <input type="file" hidden>
+                                    </div>
+                                </div>
+                                <div class="button py-5">
+                                    <button id="btn-url-proceed" type="submit"
+                                            class="btn orange-background text-white d-block m-auto"
+                                            style="padding: 10px 50px;"
+                                            onclick=afterrrr();>
+                                        Generate
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2" style="width: 10%;">
+                              <div class="image d-flex justify-content-center align-items-center">
+                                  <img id="myIcon" src="" alt=""/>
+                              </div>
+                            </div>
+                            <div class="col-md-5">
+                                <!--<div class="content" style="height: 500px; border: 1px dashed #000;">
+                                    <img style="max-height: 300px;" src="" alt="Detected Image">
+                                </div>-->
+                                <div class="content" style="height: 500px; border: 1px solid #000;">
+                                    <img id="myImage" src=""
+                                         style="width: 100%; max-height: 500px; max-width: 700px; object-fit: fill; border-radius: 5px; padding: 3%;">
+                                </div>
+
+                                <div class="button py-5">
+                                    <form id="aim-url-form" novalidate="novalidate" class="needs-validation">
+                                        <div role="group" class="input-group  d-flex justify-content-end">
+                                            <button id="btn-url-proceed" type="submit"
+                                                    class="btn orange-background text-white d-block m-auto"
+                                                    style="padding: 10px 50px;">Preview
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ {% endblock %}
+
+</main>

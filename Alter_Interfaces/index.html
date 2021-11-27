@@ -1,0 +1,699 @@
+{% extends 'header.html' %}
+{% block content %}
+    <div id="snowing">
+    </div>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container-fluid" style="z-index: 111; padding: 0 8%;">
+            <div class="row">
+                <div class="col-lg-9 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1 style="color: #ff5500; font-size:  4.5rem; line-height: 1; text-align: left;">The Alter <span id="typed"
+                                                                                                    style="color: #fff !important; font-size:  4rem !important;"></span>
+                    </h1>
+                    <h2 class="text-white" style="font-style: italic;text-align: left;">Path To Success You in Software Development Life
+                        Process...</h2>
+                    <div class="d-flex">
+                        <a href="{% url 'generate-umls' %}" class="btn-get-started scrollto" style="font-size: 1rem;">Get Started</a>
+                        <a href="https://youtu.be/EFqgEsffbQM"
+                           class="text-white glightbox btn-watch-video"><i
+                                class="dark-orange-color bi bi-play-circle"></i><span style="font-size: 1rem;">Watch Video</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 order-1 order-lg-2 hero-img">
+
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Featured Services Section ======= -->
+        <section id="featured-services" class="featured-services">
+            <div class="container-fluid" style="padding: 0 5%;">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0"  data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="700">
+                        <a href="{% url 'generate-umls' %}">
+                            <div class="card h-100 cardcontainers" style="animation-delay: 4s;" data-tilt>
+                                <div class="icon-box">
+                                   <div class="icon"><img src="https://img.icons8.com/external-wanicon-lineal-wanicon/50/FF5A09/external-workflow-business-strategy-wanicon-lineal-wanicon.png"/></div><!--<i class="dark-orange-color bi bi-clipboard-data"></i>-->
+                                    <h4 class="title">Generate UML Diagrams</h4>
+                                    <p class="description">Gather initial user requirements using video conferencing
+                                        and generate Use case, Class, Activity and Sequence diagrams.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0"  data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1500">
+                        <a href="{% url 'wireframe-intro' %}">
+                            <div class="card h-100 cardcontainers" style="animation-delay: 8s;" data-tilt>
+                                <div class="icon-box">
+                                    <div class="icon"><img src="https://img.icons8.com/external-sbts2018-outline-sbts2018/50/FF5A09/external-wireframe-design-thinking2-sbts2018-outline-sbts2018.png"/><!--<i class="dark-orange-color bi bi-laptop"></i>--></div>
+                                    <h4 class="title">Generate Wireframes</h4>
+                                    <p class="description">Use the Use case, Class, Activity and Sequence diagrams
+                                        created in the previous phase to generate wireframes.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2100">
+                        <a href="{% url 'web-interface-editor' %}">
+                            <div class="card h-100 cardcontainers" style="animation-delay: 12s;" data-tilt>
+                                <div class="icon-box">
+                                    <div class="icon"><img src="https://img.icons8.com/ios/50/FF5A09/media-queries.png"/><!--<i class="dark-orange-color bi bi-card-checklist"></i>--></div>
+                                    <h4 class="title">Generate Web Interfaces</h4>
+                                    <p class="description">Obtain wireframes from second phase and generate functioning Web User Interfaces</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2800">
+                        <a href="{% url 'HCI_Test' %}">
+                            <div class="card h-100 cardcontainers" style="animation-delay: 16s;" data-tilt>
+                                <div class="icon-box">
+                                    <div class="icon"><i class="dark-orange-color bi bi-clipboard-data"></i></div>
+                                    <h4 class="title">Test HCI Principles</h4>
+                                    <p class="description">Obtain web user interfaces and check applicability of HCI principles </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Featured Services Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="system" class="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center aos-init aos-animate" data-aos="zoom-out-down" data-aos-duration="3000">
+                        <img src="static/img/f.jpg" class="img-fluid border-radius" alt="Home Cover Two"
+                             style="height: 450px;"/>
+                    </div>
+                    <div class="col-lg-7 pt-4 pt-lg-0 content">
+                        <div class="content">
+                            <h3>What is The Alter?</h3>
+                            <p class="pt-3" style="text-align: justify; font-size: 0.95rem;">
+                                "The Alter" eliminates the software product's inconsistency by keeping the SDLC's best
+                                practices and ensuring that the final product has followed the principles of HCI
+                                (Human-Computer Interaction) with minimal supervisor guidance under the COVID 19
+                                scenario.
+                            </p>
+                            <p class="fw-bold" style="color: #5f687b;">Main Components of the System: </p>
+                            <ul>
+                                <li class="fst-italic" data-aos="fade-left" data-aos-duration="550"><i class="dark-orange-color bi bi-check-circle"></i> Generate UML
+                                    diagrams (Activity Diagram, Sequence Diagram, Use Case Diagram, Class Diagram).
+                                </li>
+                                <li class="fst-italic" data-aos="fade-left" data-aos-duration="600"><i class="dark-orange-color bi bi-check-circle"></i> Obtain
+                                    generated UML diagrams and converted them into low-fidelity prototypes.( Wireframe).
+                                </li>
+                                <li class="fst-italic pt-2" data-aos="fade-left" data-aos-duration="650"><i class="dark-orange-color bi bi-check-circle"></i> Obtain
+                                    generated low-fidelity prototype (wireframe) and converted them into direct web
+                                    interfaces.
+                                </li>
+                                <li class="fst-italic pt-2" data-aos="fade-left" data-aos-duration="700"><i class="dark-orange-color bi bi-check-circle"></i>
+                                    Finally, check whether proper HCI principles have been applied in the final product.
+                                </li>
+                            </ul>
+                            <p style="text-align: justify; font-size: 0.95rem;">
+                                Consequently, this solution fundamentally satisfies the semi-automated SDLC system based
+                                on HCI for academic students and software developers (both trainees and employees) who
+                                are unable to attend their workplace or university work as a team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= Counts Section ======= -->
+        <section id="counts" class="counts pt-5 pb-0">
+            <div class="container">
+                <div class="row counters">
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="55" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Generated UMLs</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Generated Wireframes</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="80" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>Generated GUIs</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="75" data-purecounter-duration="1"
+                              class="purecounter"></span>
+                        <p>HCI Testing</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Counts Section -->
+
+        <section id="about">
+            <div class="mfSectionWrapper" style="text-align:center; padding-top: 50px;">
+                <h2 class="mfSectionTitle" style="">Our System Provides..</h2>
+                <p class="mfSectionContent" style="padding-bottom:20px;">System Facilitates to Generate UML Diagrams, Low-fi Prototypes, WebUIs and HCI Testing from your Initial Requirements Automatically..</p>
+                <div id="mfSlide">
+                    <div class="mfCardWrapper">
+                        <a href="#"
+                           target="_blank" class="mfCard">
+                            <span class="mfCardIcon" style="background:#000;"></span>
+                            <div class="mfCardImagewrapper" style="background:#fff;">
+                                <img src="static/img/ui.png" alt="Archive">
+                            </div>
+                        </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                            <span class="mfCardIcon" style="background:#000;"></span>
+                            <div class="mfCardImagewrapper" style="background:#fff;">
+                                <img src="static/img/ui-image.png" alt="Archive">
+                            </div>
+                        </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                            <span class="mfCardIcon" style="background:#000;"></span>
+                            <div class="mfCardImagewrapper" style="background:#fff;">
+                                <img src="static/img/ui-two.png" alt="Archive">
+                            </div>
+                        </a>
+                        <a href="#"
+                           target="_blank" class="mfCard">
+
+                            <span class="mfCardIcon" style="background:#000;"></span>
+                            <div class="mfCardImagewrapper" style="background:#fff;">
+                                <img src="static/img/ui-three.png" alt="Archive">
+                            </div>
+                        </a><a href="#"
+                               target="_blank" class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-fours.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#"
+                           target="_blank" class="mfCard">
+
+                            <span class="mfCardIcon" style="background:#000;"></span>
+                            <div class="mfCardImagewrapper" style="background:#fff;">
+                                <img src="static/img/ui-five.png" alt="Archive">
+                            </div>
+                        </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                            <span class="mfCardIcon" style="background:#000;"></span>
+                            <div class="mfCardImagewrapper" style="background:#fff;">
+                                <img src="static/img/ui-six.png" alt="Archive">
+                            </div>
+                        </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                            <span class="mfCardIcon" style="background:#000;"></span>
+                            <div class="mfCardImagewrapper" style="background:#fff;">
+                                <img src="static/img/ui-seven.png" alt="Archive">
+                            </div>
+                        </a><a
+                            href="#"
+                            target="_blank" class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-eight.png" alt="Archive">
+                        </div>
+                    </a><a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-nine.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-ten.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-eleven.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-twelve.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-thirteen.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-fourteen.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-fifteen.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-sixteen.png" alt="Archive">
+                        </div>
+                    </a>
+                         <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-ten.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-eleven.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-twelve.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-thirteen.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-fourteen.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-fifteen.png" alt="Archive">
+                        </div>
+                    </a>
+                        <a href="#" target="_blank"
+                           class="mfCard">
+
+                        <span class="mfCardIcon" style="background:#000;"></span>
+                        <div class="mfCardImagewrapper" style="background:#fff;">
+                            <img src="static/img/ui-sixteen.png" alt="Archive">
+                        </div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Services Section ======= -->
+       <!-- <section id="services" class="services section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Services</span>
+                    <h2>Services</h2>
+                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4><a href="">Lorem Ipsum</a></h4>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4><a href="">Sed ut perspiciatis</a></h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <h4><a href="">Magni Dolores</a></h4>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-world"></i></div>
+                            <h4><a href="">Nemo Enim</a></h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-slideshow"></i></div>
+                            <h4><a href="">Dele cardo</a></h4>
+                            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-arch"></i></div>
+                            <h4><a href="">Divera don</a></h4>
+                            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section> --><!-- End Services Section -->
+
+        <!-- ======= Testimonials Section ======= -->
+       <!-- <section id="testimonials" class="testimonials section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Testimonials</span>
+                    <h2>Testimonials</h2>
+                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                </div>
+
+                <div class="testimonials-slider swiper-container">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
+                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
+                                    risus at semper.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="static/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                <h3>Saul Goodman</h3>
+                                <h4>Ceo &amp; Founder</h4>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
+                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
+                                    legam anim culpa.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="static/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                                <h3>Sara Wilsson</h3>
+                                <h4>Designer</h4>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
+                                    veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
+                                    minim.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="static/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                                <h3>Jena Karlis</h3>
+                                <h4>Store Owner</h4>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
+                                    fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
+                                    dolore labore illum veniam.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="static/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                                <h3>Matt Brandon</h3>
+                                <h4>Freelancer</h4>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                    culpa fore nisi cillum quid.
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <img src="static/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                                <h3>John Larson</h3>
+                                <h4>Entrepreneur</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="cta" class="cta">
+            <div class="container">
+
+                <div class="text-center">
+                    <h3>Call To Action</h3>
+                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                    <a class="cta-btn" href="#">Call To Action</a>
+                </div>
+
+            </div>
+        </section>-->
+
+        <!-- ======= Team Section ======= -->
+       <!-- <section id="team" class="team section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Team</span>
+                    <h2>Team</h2>
+                    <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="static/img/team/team-1.jpg" alt="">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>
+                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis
+                                quaerat qui aut aut aut
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="static/img/team/team-2.jpg" alt="">
+                            <h4>Sarah Jhinson</h4>
+                            <span>Product Manager</span>
+                            <p>
+                                Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum
+                                rerum temporibus
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="static/img/team/team-3.jpg" alt="">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                            <p>
+                                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum
+                                toro des clara
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="static/img/team/team-1.jpg" alt="">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>
+                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis
+                                quaerat qui aut aut aut
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>--><!-- End Team Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>Contact</span>
+                    <h2>Contact</h2>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>Malabe, Sri Lanka</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>info@TheAlter.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+94 112345678</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" required>
+                                </div>
+                                <div class="form-group col-md-6 mt-3 mt-md-0">
+                                    <label for="name">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="name">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="name">Message</label>
+                                <textarea class="form-control" name="message" rows="10" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+    <!-- End #main -->
+
+{% endblock %}
+
+</main>

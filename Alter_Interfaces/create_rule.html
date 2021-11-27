@@ -1,0 +1,227 @@
+{% extends 'header.html' %}
+{% load static %}
+
+
+{% block header %}
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+    h1 {
+      font-size: 20px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    img {
+    height: 40px;
+    }
+    </style>
+
+{% endblock %}
+
+
+{% block script %}
+
+    <script>
+        $('#rule_file, #documentation, #tooltip_image').on('change',function(){
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            //replace the "Choose a file" label
+            $(this).next('#file_label').html(fileName);
+        })
+
+    </script>
+
+    <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // fetch all the forms we want to apply custom style
+        var inputs = document.getElementsByClassName('form-control')
+
+        // loop over each input and watch blur event
+        var validation = Array.prototype.filter.call(inputs, function(input) {
+
+          input.addEventListener('blur', function(event) {
+            // reset
+            input.classList.remove('is-invalid')
+            input.classList.remove('is-valid')
+
+            if (input.checkValidity() === false) {
+                input.classList.add('is-invalid')
+            }
+            else {
+                input.classList.add('is-valid')
+            }
+          }, false);
+        });
+      }, false);
+    })()
+    </script>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <main id="main">
+        <div class="wrapper my-5">
+
+        <div class="container d-flex justify-content-center py-5">
+        <div class="col-3">
+            <div class="topic d-flex justify-content-center pb-3 align-items-baseline">
+                <span class="text-center fw-bold" style="font-size: 1.5rem;">User Guidance for <br>New Rule Creation</span>&ensp;
+                <i class="fa fa-check-circle tooltip" aria-hidden="true">
+                                <span>
+                                    <img class="justify-content-center w-50 d-block m-auto"
+                                         src="static/img/warning.png">
+                                    <p class="text-center lh-base" style="font-size: 1.5rem;">Please follow the user guide before start the process</p>
+                                                    </span>
+                </i></div>
+            <a href="static/img/GuidelinesHCIRules.pdf" target="_blank">
+                <div class="">
+                    <img class="img__img d-block m-auto img-fluid p-0 w-25" src="static/img/guidance.jpg"/>
+                    <div class="img__description_layer">
+                        <h5 class="img__description" style="font-weight: 800;font-size: 1.8rem;">View PDF </h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+            <div class="container  pt-3">
+
+                <div class="row justify-content-center align-items-center">
+                    <h2 class="text-center">Create New Rule</h2>
+
+                    <div class="col-md-8 mt-5">
+                        <form action="create_rule" class="needs-validation" novalidate method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <div class="form-group ">
+                                <label for="title" class="form-control-label">{{ form.title.label }}</label>
+                                <input type="text" name="title" class="form-control m-0 {% if form.title.errors %} is-invalid {% endif %}" id="title" placeholder="Enter rule title" required>
+                                {% if not form.title.errors %}
+                                    <small id="title_help" class="form-text mt-0 invalid-feedback mx-sm-1 mt-0 pt-0">There must be an underscore ('_') between ever two words!</small>
+                                {% endif %}
+                                {% for err in form.title.errors %}
+                                    <div class="invalid-feedback mt-0">{{ err }}</div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="description">Rule Description</label>
+                                <input type="text" class="form-control m-0 {% if form.description.errors %} is-invalid {% endif %}" name="description" id="description" placeholder="Enter Rule Description" autocomplete="no" required >
+                                {% for err in form.description.errors %}
+                                    <div class="invalid-feedback mt-0">{{ err }}</div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="expand_description">Rule Introduction</label>
+                                <input type="text" class="form-control m-0 {% if form.expand_description.errors %} is-invalid {% endif %}" name="expand_description" id="expand_description" placeholder="Enter Rule Introduction" autocomplete="no" >
+                                {% for err in form.expand_description.errors %}
+                                    <div class="invalid-feedback mt-0">{{ err }}</div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">Rule Category</label>
+                                <select class="custom-select mr-sm-2 custom-select-lg {% if form.category.errors %} is-invalid {% endif %}" name="category" id="category" style="font-size: 14px">
+                                    <option value="" selected disabled>Choose Suitable Category</option>
+                                    {% for id, name in form.fields.category.choices %}
+                                        <option value="{{ id }}" {% if form.category.value == id %} selected {% endif %}>{{ name }}</option>
+                                    {% endfor %}
+                              </select>
+
+                            {% for err in form.category.errors %}
+                                <div class="invalid-feedback mt-0">{{ err }}</div>
+                            {% endfor %}
+                            </div>
+
+
+                              <div class="custom-file my-2">
+                                  <input type="file" value="{{ form.rule_file.value }}" class="custom-file-input {% if form.rule_file.errors %} is-invalid {% endif %}" name="rule_file" id="rule_file" >
+                                  <label id="file_label" class="custom-file-label" for="rule_file"> Upload Python file</label>
+                                  {% for err in form.rule_file.errors %}
+                                      <div class="invalid-feedback mt-0">{{ err }}</div>
+                                  {% endfor %}
+                              </div>
+
+                                <div class="custom-file my-2">
+                                  <input type="file" value="{{ form.documentation.value }}" class="custom-file-input {% if form.documentation.errors %} is-invalid {% endif %}" name="documentation" id="documentation" >
+                                  <label id="file_label" class="custom-file-label" for="documentation">Upload HCI Advice Documentation</label>
+                                    {% for err in form.documentation.errors %}
+                                        <div class="invalid-feedback mt-0 ">{{ err }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="custom-file my-2">
+                                    <input type="file" value="{{ form.tooltip_image.value }}" class="custom-file-input {% if form.tooltip_image.errors %} is-invalid {% endif %}" name="tooltip_image" id="tooltip_image" >
+                                    <label id="file_label" class="custom-file-label" for="tooltip_image">Upload an image for tooltip</label>
+                                    {% for err in form.tooltip_image.errors %}
+                                        <div class="invalid-feedback mt-0">{{ err }}</div>
+                                    {% endfor %}
+                                </div>
+
+                            <hr class="my-2">
+
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" value="global" id="global" name="access_type" class="custom-control-input">
+                              <label class="custom-control-label" for="global">Allow to public usage</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" value="test" checked id="test" name="access_type" class="custom-control-input">
+                              <label class="custom-control-label" for="test">Allow to personal usage only (test purpose)</label>
+                            </div>
+
+
+                            <div class="my-3">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if message.tags == 'error' %}
+                                            <div class="border rounded border-danger bg-danger text-center text-white p-2">
+                                                <span class="icofont-error px-1"></span>{{ message }}</div>
+                                        {% else %}
+                                        <div class="border rounded border-{{ message.tags }} bg-{{ message.tags}} text-center text-white p-2">
+                                            <span class="icofont-tick-mark px-1"></span>{{ message }}</div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+
+                         <div class="container py-5">
+    <div class="row">
+        <div class="col-6">
+            <a href="{% url 'HCI_Test' %}"><button type="button"
+                              class="btn orange-background text-white d-block m-auto"
+                              style="padding: 10px 50px;"
+                              role="button">
+                          Back
+                      </button></a>
+        </div>
+        <div class="col-6">
+            <button type="submit"
+                              class="btn orange-background text-white d-block m-auto"
+                              style="padding: 10px 50px;"
+                              role="button">
+                          Submit
+                      </button>
+
+    </div>
+</div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+</main>

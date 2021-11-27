@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>The Alter</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    {% block header %}
+    {% endblock %}
+
+
+    <!-- Favicons -->
+    <link href="static/img/favicon-logo.png" rel="icon" sizes="64x64">
+    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js">
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="static/css/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/css/mdb5/plugins/file-upload.min.css?v=
+  3.8.1">
+    <link rel="stylesheet" href="https://interfacemetrics.aalto.fi/static/css/app.5296181a3701f1ab87c4310b2ed0e7bd.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/latest/css/themes/infragistics/infragistics.theme.css"
+          rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/latest/css/structure/infragistics.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="static/css/style-upload.css?v=0.000005">
+    <link rel="stylesheet" href="static/css/style.css?v=0.000313">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="static/css/style-one.css?v=0.00021">
+    <link rel="stylesheet" href="static/css/style-two.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-3855518-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('require', 'GTM-WJ88MZ5');
+        ga('send', 'pageview');
+    </script>
+
+    <script type='text/javascript'>
+        var k42 = false;
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+
+        k42 = true;
+        googletag.cmd.push(function () {
+            googletag.pubads().setTargeting("page_section", (function () {
+                var folder = location.pathname;
+                folder = folder.replace("/", "");
+                folder = folder.substr(0, folder.indexOf("/"));
+                return folder + "tryit";
+            })());
+        });
+        (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+
+        var snhb = snhb || {};
+        snhb.queue = snhb.queue || [];
+        snhb.options = {
+            logOutputEnabled: false,
+            autoStartAuction: false
+        };
+
+    </script>
+    <script>
+    function myFunction() {
+      if (window.location.pathname === '/') {
+        alert("Welcome!!!");
+      }
+    }
+</script>
+    <script src="//cdn.snigelweb.com/sncmp/latest/sncmp_stub.min.js"></script>
+    <style>
+        #snigel-cmp-framework .sn-b-def.sn-blue {
+            color: #ffffff !important;
+            background-color: #4CAF50 !important;
+            border-color: #4CAF50 !important;
+        }
+
+        #snigel-cmp-framework .sn-b-def {
+            border-color: #4CAF50 !important;
+            color: #4CAF50 !important;
+        }
+
+        #snigel-cmp-framework .sn-selector ul li {
+            color: #4CAF50 !important
+        }
+
+        #snigel-cmp-framework .sn-selector ul li:after {
+            background-color: #4CAF50 !important;
+        }
+
+        #snigel-cmp-framework .sn-footer-tab .sn-privacy a {
+            color: #4CAF50 !important;
+        }
+
+        #snigel-cmp-framework .sn-arrow:after, #snigel-cmp-framework .sn-arrow:before {
+            background-color: #4CAF50 !important;
+        }
+
+        #snigel-cmp-framework .sn-switch input:checked + span::before {
+            background-color: #4CAF50 !important;
+        }
+
+        #adconsent-usp-link {
+            border: 1px solid #4CAF50 !important;
+            color: #4CAF50 !important;
+        }
+
+        #adconsent-usp-banner-optout input:checked + .adconsent-usp-slider {
+            background-color: #4CAF50 !important;
+        }
+
+        #adconsent-usp-banner-btn {
+            color: #ffffff;
+            border: solid 1px #4CAF50 !important;
+            background-color: #4CAF50 !important;
+        }</style>
+    <script type="text/javascript">
+        __cmp("setLogo", "https://www.alterschools.com/images/img_logo_small.png");
+        __cmp("setPrivacyPolicy", "https://www.alterschools.com/about/about_privacy.asp");
+    </script>
+    <script async type="text/javascript" src="//cdn.snigelweb.com/pub/alterschools.com/snhb-loader.min.js"></script>
+    <script>
+        snhb.queue.push(function () {
+
+            snhb.startAuction(["try_it_leaderboard"]);
+
+        });
+    </script>
+    <script>
+        if (window.addEventListener) {
+            window.addEventListener("resize", browserResize);
+        } else if (window.attachEvent) {
+            window.attachEvent("onresize", browserResize);
+        }
+        var xbeforeResize = window.innerWidth;
+
+        function browserResize() {
+            var afterResize = window.innerWidth;
+            if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
+                (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
+                (xbeforeResize < (468) && afterResize >= (468)) || (xbeforeResize >= (468) && afterResize < (468))) {
+                xbeforeResize = afterResize;
+
+                snhb.queue.push(function () {
+                    snhb.startAuction(["try_it_leaderboard"]);
+                });
+
+            }
+            if (window.screen.availWidth <= 768) {
+                restack(window.innerHeight > window.innerWidth);
+            }
+            fixDragBtn();
+            showFrameSize();
+        }
+
+        var fileID = "";
+        var loadSave = false;
+
+        function getSavedFile() {
+            loadSave = true;
+            var htmlCode;
+            var paramObj = {};
+            paramObj.fileid = "";
+            fileID = paramObj.fileid;
+            var paramA = JSON.stringify(paramObj);
+            var httpA = new XMLHttpRequest();
+            httpA.open("POST", globalURL, true);
+            httpA.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            httpA.onreadystatechange = function () {
+                if (httpA.readyState == 4 && httpA.status == 200) {
+                    document.getElementById("textareaCode").value = httpA.responseText;
+                    window.editor.getDoc().setValue(httpA.responseText);
+                    loadSave = false;
+                }
+            }
+            httpA.send(paramA);
+        }
+    </script>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #000000;
+            margin: 0px;
+            font-size: 100%;
+        }
+
+        .trytopnav {
+            height: 40px;
+            overflow: hidden;
+            min-width: 380px;
+            position: absolute;
+            width: 98%;
+            top: 100% !important;
+            background-color: #757575;
+        }
+
+        .topnav-icons {
+            margin-right: 8px;
+        }
+
+        .trytopnav a {
+            color: #999999;
+        }
+
+        .alter-bar .alter-bar-item:hover {
+            color: #757575 !important;
+        }
+
+        a.alterschoolslink {
+            padding: 0 !important;
+            display: inline !important;
+        }
+
+        a.alterschoolslink:hover, a.alterschoolslink:active {
+            text-decoration: underline !important;
+            background-color: transparent !important;
+        }
+
+        #dragbar {
+            position: absolute;
+            cursor: col-resize;
+            z-index: 3;
+            padding: 5px;
+        }
+
+        #shield {
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            z-index: 4;
+        }
+
+        #framesize span {
+            xfont-family: Consolas, monospace;
+        }
+
+        #container {
+            background-color: #757575;
+            width: 100%;
+            overflow: auto;
+            position: absolute;
+            top: 95px;
+            bottom: 0;
+
+            height: auto;
+        }
+
+        #textareacontainer, #iframecontainer {
+            float: left;
+            height: 100%;
+            width: 50%;
+        }
+
+        #textarea, #iframe {
+            height: 100%;
+            width: 100%;
+            padding-bottom: 10px;
+            padding-top: 1px;
+        }
+
+        #textarea {
+            padding-left: 10px;
+            padding-right: 5px;
+        }
+
+        #iframe {
+            padding-left: 5px;
+            padding-right: 10px;
+        }
+
+        #textareawrapper {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        #iframewrapper {
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        #textareaCode {
+            background-color: #ffffff;
+            font-family: consolas, "courier new", monospace;
+            font-size: 15px;
+            height: 100%;
+            width: 100%;
+            padding: 8px;
+            resize: none;
+            border: none;
+            line-height: normal;
+        }
+
+        .CodeMirror.cm-s-default {
+            line-height: normal;
+            padding: 4px;
+            height: 100%;
+            width: 100%;
+        }
+
+        #iframeResult, #iframeSource {
+            background-color: #ffffff;
+            height: 100%;
+            width: 100%;
+        }
+
+        #stackV {
+            background-color: #999999;
+        }
+
+        #stackV:hover {
+            background-color: #BBBBBB !important;
+        }
+
+        #stackV.horizontal {
+            background-color: transparent;
+        }
+
+        #stackV.horizontal:hover {
+            background-color: #BBBBBB !important;
+        }
+
+        #stackH.horizontal {
+            background-color: #999999;
+        }
+
+        #stackH.horizontal:hover {
+            background-color: #999999 !important;
+        }
+
+        #textareacontainer.horizontal, #iframecontainer.horizontal {
+            height: 50%;
+            float: none;
+            width: 100%;
+        }
+
+        #textarea.horizontal {
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #iframe.horizontal {
+            height: 100%;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        #container.horizontal {
+            min-height: 200px;
+            margin-left: 0;
+        }
+
+        #tryitLeaderboard {
+            overflow: hidden;
+            text-align: center;
+            height: 95px;
+        }
+
+        .alter-dropdown-content {
+            width: 350px
+        }
+
+        @media screen and (max-width: 727px) {
+            .trytopnav {
+                top: 70px;
+            }
+
+            #container {
+                top: 116px;
+            }
+
+        }
+
+        @media screen and (max-width: 467px) {
+            .trytopnav {
+                top: 60px;
+            }
+
+            #container {
+                top: 106px;
+            }
+
+            .alter-dropdown-content {
+                width: 100%
+            }
+        }
+
+        @media only screen and (max-device-width: 768px) {
+            #iframewrapper {
+                overflow: auto;
+            }
+
+            #container {
+                min-width: 310px;
+            }
+
+            .stack {
+                display: none;
+            }
+
+            #tryhome {
+                display: block;
+            }
+        }
+
+        .loader {
+            border: 6px solid #f3f3f3; /* Light grey */
+            border-top: 6px solid #FF5A09; /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        #saveLoader {
+            margin: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #iframewrapper {
+
+        }
+
+        body.darktheme {
+            background-color: rgb(40, 44, 52);
+        }
+
+        body.darktheme #tryitLeaderboard {
+            background-color: rgb(40, 44, 52);
+        }
+
+        body.darktheme .trytopnav {
+            background-color: #343434;
+            color: #dddddd;
+        }
+
+        body.darktheme #container {
+            background-color: #343434;
+        }
+
+        body.darktheme .trytopnav a {
+            color: #dddddd;
+        }
+
+        body.darktheme ::-webkit-scrollbar {
+            width: 12px;
+            height: 3px;
+        }
+
+        body.darktheme ::-webkit-scrollbar-track-piece {
+            background-color: #000;
+        }
+
+        body.darktheme ::-webkit-scrollbar-thumb {
+            height: 50px;
+            background-color: #616161;
+        }
+
+        body.darktheme ::-webkit-scrollbar-thumb:hover {
+            background-color: #aaaaaa;
+        }
+
+        .trytopnav {
+            height: 48px !important;
+            top: 93%;
+            z-index: 1;
+        }
+
+        @media screen and (min-width: 1500px) {
+            .trytopnav {
+                height: 48px !important;
+                top: 95%;
+                z-index: 1;
+            }
+        }
+
+        .fa {
+            padding: 10px 10px !important;
+        }
+
+        a.topnav-icons, a.topnav-icons.fa-home, a.topnav-icons.fa-menu {
+            font-size: 28px !important;
+        }
+
+        /* Paste this css to your style sheet file or under head tag */
+        /* This only works with JavaScript,
+        if it's not present, don't show loader */
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+	        position: fixed;
+	        left: 0px;
+	        top: 0px;
+	        width: 100%;
+	        height: 100%;
+	        z-index: 9999;
+	        background: url('static/img/finger.webp') center no-repeat #212529;
+        }
+
+        /*** New Spin ***/
+        .container-spin {
+            position: fixed;
+	        left: 0px;
+	        top: 0px;
+	        width: 100%;
+	        height: 100%;
+	        z-index: 999999;
+            background-color: #212529;
+            opacity: 0.9;
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+          align-items: center; }
+
+.machine {
+  width: 10vmin;
+  fill: #FF5A09; }
+
+.small-shadow, .medium-shadow, .large-shadow {
+  fill: rgba(0, 0, 0, 0.05); }
+
+.small {
+  -webkit-animation: counter-rotation 2.5s infinite linear;
+	   -moz-animation: counter-rotation 2.5s infinite linear;
+	     -o-animation: counter-rotation 2.5s infinite linear;
+	        animation: counter-rotation 2.5s infinite linear;
+  -webkit-transform-origin: 100.136px 225.345px;
+      -ms-transform-origin: 100.136px 225.345px;
+          transform-origin: 100.136px 225.345px; }
+
+.small-shadow {
+  -webkit-animation: counter-rotation 2.5s infinite linear;
+	   -moz-animation: counter-rotation 2.5s infinite linear;
+	     -o-animation: counter-rotation 2.5s infinite linear;
+	        animation: counter-rotation 2.5s infinite linear;
+  -webkit-transform-origin: 110.136px 235.345px;
+      -ms-transform-origin: 110.136px 235.345px;
+          transform-origin: 110.136px 235.345px; }
+
+.medium {
+  -webkit-animation: rotation 3.75s infinite linear;
+	   -moz-animation: rotation 3.75s infinite linear;
+	     -o-animation: rotation 3.75s infinite linear;
+	        animation: rotation 3.75s infinite linear;
+  -webkit-transform-origin: 254.675px 379.447px;
+      -ms-transform-origin: 254.675px 379.447px;
+          transform-origin: 254.675px 379.447px; }
+
+.medium-shadow {
+  -webkit-animation: rotation 3.75s infinite linear;
+	   -moz-animation: rotation 3.75s infinite linear;
+	     -o-animation: rotation 3.75s infinite linear;
+	        animation: rotation 3.75s infinite linear;
+  -webkit-transform-origin: 264.675px 389.447px;
+      -ms-transform-origin: 264.675px 389.447px;
+          transform-origin: 264.675px 389.447px; }
+
+.large {
+  -webkit-animation: counter-rotation 5s infinite linear;
+     -moz-animation: counter-rotation 5s infinite linear;
+	     -o-animation: counter-rotation 5s infinite linear;
+        	animation: counter-rotation 5s infinite linear;
+  -webkit-transform-origin: 461.37px 173.694px;
+      -ms-transform-origin: 461.37px 173.694px;
+          transform-origin: 461.37px 173.694px; }
+
+.large-shadow {
+  -webkit-animation: counter-rotation 5s infinite linear;
+	   -moz-animation: counter-rotation 5s infinite linear;
+	     -o-animation: counter-rotation 5s infinite linear;
+	        animation: counter-rotation 5s infinite linear;
+  -webkit-transform-origin: 471.37px 183.694px;
+      -ms-transform-origin: 471.37px 183.694px;
+          transform-origin: 471.37px 183.694px; }
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to   {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to   {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to   {transform: rotate(359deg);}
+}
+
+@-webkit-keyframes counter-rotation {
+    from {-webkit-transform: rotate(359deg);}
+    to   {-webkit-transform: rotate(0deg);}
+}
+@-moz-keyframes counter-rotation {
+    from {-moz-transform: rotate(359deg);}
+    to   {-moz-transform: rotate(0deg);}
+}
+@-o-keyframes counter-rotation {
+    from {-o-transform: rotate(359deg);}
+    to   {-o-transform: rotate(0deg);}
+}
+@keyframes counter-rotation {
+    from {transform: rotate(359deg);}
+    to   {transform: rotate(0deg);}
+}
+
+/* code #1 */
+.loading01 span:nth-child(1) {
+    animation-delay: 0s;
+}
+.loading01 span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.loading01 span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.loading01 span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.loading01 span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.loading01 span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+.loading01 span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+.loading01 span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+.loading01 span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+.loading01 span:nth-child(10) {
+    animation-delay: 0.9s;
+}
+.loading01 span {
+    animation: loading01 1.4s infinite alternate;
+}
+.loading span {
+    display: inline-block;
+    margin: 0 -0.05em;
+}
+.loading {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    text-align: center;
+    color: #FF5A09;
+    padding-left: 1%;
+}
+@keyframes loading01 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+    </style>
+</head>
+
+<body>
+{#<div class="se-pre-con"></div>#}
+<div class="container-spin">
+    <svg class="machine"xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 645 526">
+      <defs/>
+      <g>
+        <path  x="-173,694" y="-173,694" class="large-shadow" d="M645 194v-21l-29-4c-1-10-3-19-6-28l25-14 -8-19 -28 7c-5-8-10-16-16-24L602 68l-15-15 -23 17c-7-6-15-11-24-16l7-28 -19-8 -14 25c-9-3-18-5-28-6L482 10h-21l-4 29c-10 1-19 3-28 6l-14-25 -19 8 7 28c-8 5-16 10-24 16l-23-17L341 68l17 23c-6 7-11 15-16 24l-28-7 -8 19 25 14c-3 9-5 18-6 28l-29 4v21l29 4c1 10 3 19 6 28l-25 14 8 19 28-7c5 8 10 16 16 24l-17 23 15 15 23-17c7 6 15 11 24 16l-7 28 19 8 14-25c9 3 18 5 28 6l4 29h21l4-29c10-1 19-3 28-6l14 25 19-8 -7-28c8-5 16-10 24-16l23 17 15-15 -17-23c6-7 11-15 16-24l28 7 8-19 -25-14c3-9 5-18 6-28L645 194zM471 294c-61 0-110-49-110-110S411 74 471 74s110 49 110 110S532 294 471 294z"/>
+      </g>
+      <g>
+        <path x="-136,996" y="-136,996" class="medium-shadow" d="M402 400v-21l-28-4c-1-10-4-19-7-28l23-17 -11-18L352 323c-6-8-13-14-20-20l11-26 -18-11 -17 23c-9-4-18-6-28-7l-4-28h-21l-4 28c-10 1-19 4-28 7l-17-23 -18 11 11 26c-8 6-14 13-20 20l-26-11 -11 18 23 17c-4 9-6 18-7 28l-28 4v21l28 4c1 10 4 19 7 28l-23 17 11 18 26-11c6 8 13 14 20 20l-11 26 18 11 17-23c9 4 18 6 28 7l4 28h21l4-28c10-1 19-4 28-7l17 23 18-11 -11-26c8-6 14-13 20-20l26 11 11-18 -23-17c4-9 6-18 7-28L402 400zM265 463c-41 0-74-33-74-74 0-41 33-74 74-74 41 0 74 33 74 74C338 430 305 463 265 463z"/>
+      </g>
+      <g >
+        <path x="-100,136" y="-100,136" class="small-shadow" d="M210 246v-21l-29-4c-2-10-6-18-11-26l18-23 -15-15 -23 18c-8-5-17-9-26-11l-4-29H100l-4 29c-10 2-18 6-26 11l-23-18 -15 15 18 23c-5 8-9 17-11 26L10 225v21l29 4c2 10 6 18 11 26l-18 23 15 15 23-18c8 5 17 9 26 11l4 29h21l4-29c10-2 18-6 26-11l23 18 15-15 -18-23c5-8 9-17 11-26L210 246zM110 272c-20 0-37-17-37-37s17-37 37-37c20 0 37 17 37 37S131 272 110 272z"/>
+      </g>
+      <g>
+        <path x="-100,136" y="-100,136" class="small" d="M200 236v-21l-29-4c-2-10-6-18-11-26l18-23 -15-15 -23 18c-8-5-17-9-26-11l-4-29H90l-4 29c-10 2-18 6-26 11l-23-18 -15 15 18 23c-5 8-9 17-11 26L0 215v21l29 4c2 10 6 18 11 26l-18 23 15 15 23-18c8 5 17 9 26 11l4 29h21l4-29c10-2 18-6 26-11l23 18 15-15 -18-23c5-8 9-17 11-26L200 236zM100 262c-20 0-37-17-37-37s17-37 37-37c20 0 37 17 37 37S121 262 100 262z"/>
+      </g>
+      <g>
+        <path x="-173,694" y="-173,694" class="large" d="M635 184v-21l-29-4c-1-10-3-19-6-28l25-14 -8-19 -28 7c-5-8-10-16-16-24L592 58l-15-15 -23 17c-7-6-15-11-24-16l7-28 -19-8 -14 25c-9-3-18-5-28-6L472 0h-21l-4 29c-10 1-19 3-28 6L405 9l-19 8 7 28c-8 5-16 10-24 16l-23-17L331 58l17 23c-6 7-11 15-16 24l-28-7 -8 19 25 14c-3 9-5 18-6 28l-29 4v21l29 4c1 10 3 19 6 28l-25 14 8 19 28-7c5 8 10 16 16 24l-17 23 15 15 23-17c7 6 15 11 24 16l-7 28 19 8 14-25c9 3 18 5 28 6l4 29h21l4-29c10-1 19-3 28-6l14 25 19-8 -7-28c8-5 16-10 24-16l23 17 15-15 -17-23c6-7 11-15 16-24l28 7 8-19 -25-14c3-9 5-18 6-28L635 184zM461 284c-61 0-110-49-110-110S401 64 461 64s110 49 110 110S522 284 461 284z"/>
+      </g>
+      <g>
+        <path x="-136,996" y="-136,996" class="medium" d="M392 390v-21l-28-4c-1-10-4-19-7-28l23-17 -11-18L342 313c-6-8-13-14-20-20l11-26 -18-11 -17 23c-9-4-18-6-28-7l-4-28h-21l-4 28c-10 1-19 4-28 7l-17-23 -18 11 11 26c-8 6-14 13-20 20l-26-11 -11 18 23 17c-4 9-6 18-7 28l-28 4v21l28 4c1 10 4 19 7 28l-23 17 11 18 26-11c6 8 13 14 20 20l-11 26 18 11 17-23c9 4 18 6 28 7l4 28h21l4-28c10-1 19-4 28-7l17 23 18-11 -11-26c8-6 14-13 20-20l26 11 11-18 -23-17c4-9 6-18 7-28L392 390zM255 453c-41 0-74-33-74-74 0-41 33-74 74-74 41 0 74 33 74 74C328 420 295 453 255 453z"/>
+      </g>
+    </svg>&ensp;
+    <img style="width:12%;" src="static/img/alter.png" alt="Alter"/><br>
+         <div class="loading loading01">
+    <span>L</span>
+    <span>O</span>
+    <span>A</span>
+    <span>D</span>
+    <span>I</span>
+    <span>N</span>
+    <span>G</span>
+             <span>.</span>
+             <span>.</span>
+             <span>.</span>
+    </div>
+    <section>
+
+</section>
+</div>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <h1 class="logo"><a href="{% url 'index' %}"> <img class="img-fluid" src="static/img/logo-new.png" alt="Logo"/></a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="static/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+                <li><a class="nav-link scrollto" href="#system">System</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="getstarted scrollto" href="http://127.0.0.1:8080">User Login</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+
+{% block content %}
+{% endblock %}
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+    <div class="footer-top">
+
+        <div class="container">
+
+            <div class="row  justify-content-center">
+                <div class="col-lg-6">
+                    <h3 style="color: #fff !important;">The Alter</h3>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">
+            &copy; Copyright <strong><span>The Alter</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/enno-free-simple-bootstrap-template/ -->
+            Designed by <a href="#">The Alter Team</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+
+{% block script %}
+{% endblock %}
+
+
+
+<a href="#" class="dark-orange-background back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="static/vendor/php-email-form/validate.js"></script>
+<script src="static/vendor/purecounter/purecounter.js"></script>
+<script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="static/js/main.js"></script>
+<script src="static/js/particles.js?v=0.000005"></script>
+<script src="static/js/app.js?v=0.000120"></script>
+<script src="static/js/typed.js?v=0.000010"></script>
+<script src="static/js/vanilla-tilt.js"></script>
+<script src="static/js/script.js?v=0.000010"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://igniteui.com/js/modernizr.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/infragistics.lob.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_collections.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_text.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_io.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_ui.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.documents.core_core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_collectionsextended.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.excel_core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_threading.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.ext_web.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.xml.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.documents.core_openxml.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/latest/js/modules/infragistics.excel_serialization_openxml.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<script>
+    AOS.init();
+</script>
+
+<script type="text/javascript">
+    var typed = new Typed('#typed', {
+        strings: ["Easy To Use.", "Ready To Use."],
+        typeSpeed: 60,
+        loop: true
+    });
+
+    document.getElementById("openfile").addEventListener('change', function () {
+        var fr = new FileReader();
+        fr.onload = function () {
+            document.getElementById("filecontents").textContent = this.result;
+        }
+        fr.readAsText(this.files[0]);
+    })
+
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function afterr() {
+        document.getElementById('myImage')
+            .src = "static/img/sample-detected-user-interfaces.png";
+        document.getElementById('message')
+            .innerHTML = "Detected Wireframe";
+        document.getElementById('myIcon')
+            .src = "static/img/favicon.png";
+    }
+
+    /*Pathumi Browse File*/
+    function afterrr() {
+        document.getElementById('myImage')
+            .src = "static/img/sample-hci-test-document.png";
+        document.getElementById('message')
+            .innerHTML = "Detected Wireframe";
+        document.getElementById('myIcon')
+            .src = "static/img/gears.gif";
+    }
+
+    /*Pathumi Browse File*/
+    function afterrrrr() {
+        document.getElementById('myImage')
+            .src = "static/img/excel-sample.png";
+        document.getElementById('message')
+            .innerHTML = "Detected Wireframe";
+        document.getElementById('myIcon')
+            .src = "static/img/gears.gif";
+    }
+
+    /*Sapthaka Browse File*/
+    function afterrrr() {
+        document.getElementById('myImage')
+            .src = "static/img/paper-prototype-sample.png";
+        document.getElementById('message')
+            .innerHTML = "Detected Wireframe";
+        document.getElementById('myIcon')
+            .src = "static/img/gears.gif";
+    }
+
+</script>
+
+<script>
+    $(function () {
+        $("#input").on("change", function () {
+            var excelFile,
+                fileReader = new FileReader();
+
+            $("#result").hide();
+
+            fileReader.onload = function (e) {
+                var buffer = new Uint8Array(fileReader.result);
+
+                $.ig.excel.Workbook.load(buffer, function (workbook) {
+                    var column, row, newRow, cellValue, columnIndex, i,
+                        worksheet = workbook.worksheets(0),
+                        columnsNumber = 0,
+                        gridColumns = [],
+                        data = [],
+                        worksheetRowsCount;
+
+                    // Both the columns and rows in the worksheet are lazily created and because of this most of the time worksheet.columns().count() will return 0
+                    // So to get the number of columns we read the values in the first row and count. When value is null we stop counting columns:
+                    while (worksheet.rows(0).getCellValue(columnsNumber)) {
+                        columnsNumber++;
+                    }
+
+                    // Iterating through cells in first row and use the cell text as key and header text for the grid columns
+                    for (columnIndex = 0; columnIndex < columnsNumber; columnIndex++) {
+                        column = worksheet.rows(0).getCellText(columnIndex);
+                        gridColumns.push({headerText: column, key: column});
+                    }
+
+                    // We start iterating from 1, because we already read the first row to build the gridColumns array above
+                    // We use each cell value and add it to json array, which will be used as dataSource for the grid
+                    for (i = 1, worksheetRowsCount = worksheet.rows().count(); i < worksheetRowsCount; i++) {
+                        newRow = {};
+                        row = worksheet.rows(i);
+
+                        for (columnIndex = 0; columnIndex < columnsNumber; columnIndex++) {
+                            cellValue = row.getCellText(columnIndex);
+                            newRow[gridColumns[columnIndex].key] = cellValue;
+                        }
+
+                        data.push(newRow);
+                    }
+
+                    // we can also skip passing the gridColumns use autoGenerateColumns = true, or modify the gridColumns array
+                    createGrid(data, gridColumns);
+                }, function (error) {
+                    $("#result").text("The excel file is corrupted.");
+                    $("#result").show(1000);
+                });
+            }
+
+            if (this.files.length > 0) {
+                excelFile = this.files[0];
+                if (excelFile.type === "application/vnd.ms-excel" || excelFile.type === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || (excelFile.type === "" && (excelFile.name.endsWith("xls") || excelFile.name.endsWith("xlsx")))) {
+                    fileReader.readAsArrayBuffer(excelFile);
+                } else {
+                    $("#result").text("The format of the file you have selected is not supported. Please select a valid Excel file ('.xls, *.xlsx').");
+                    $("#result").show(1000);
+                }
+            }
+
+        })
+    });
+
+    function createGrid(data, gridColumns) {
+        if ($("#grid1").data("igGrid") !== undefined) {
+            $("#grid1").igGrid("destroy");
+        }
+
+        $("#grid1").igGrid({
+            columns: gridColumns,
+            autoGenerateColumns: true,
+            dataSource: data,
+            width: "100%"
+        });
+    }
+</script>
+
+<script>
+    $("a#programatically").click(function () {
+        var now = new Date().toString();
+        this.href = "data:text/plain;charset=UTF-8," + encodeURIComponent(now);
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Activate tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Select/Deselect checkboxes
+        var checkbox = $('table tbody input[type="checkbox"]');
+        $("#selectAll").click(function () {
+            if (this.checked) {
+                checkbox.each(function () {
+                    this.checked = true;
+                });
+            } else {
+                checkbox.each(function () {
+                    this.checked = false;
+                });
+            }
+        });
+        checkbox.click(function () {
+            if (!this.checked) {
+                $("#selectAll").prop("checked", false);
+            }
+        });
+    });
+</script>
+
+<script>
+    var openFile = function (event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var text = reader.result;
+            var node = document.getElementById('output');
+            node.innerText = text;
+        };
+        reader.readAsText(input.files[0]);
+    };
+</script>
+
+    <script>
+        const processTranscript = () => {
+            var formData = new FormData();
+            var functional = []
+            var nonFunctional = []
+            var node = document.getElementById('transcriptOutput');
+            var transcriptFile = document.querySelector('#transcriptFile');
+            formData.append("transcriptFile", transcriptFile.files[0]);
+            fetch('http://localhost:5000/process-transcript', { // Your POST endpoint
+                method: 'POST',
+                body:formData // This is your file object
+            }).then(response => response.json())
+            .then((response) => {
+                console.log('response',response.results)
+                functional = response.results[0]
+                nonFunctional = response.results[1]
+                console.log('functional',functional);
+                console.log('nonFunctional',nonFunctional);
+                outputString = createOutputString(functional,nonFunctional)
+                node.innerText = outputString;
+            }).catch(
+                error => console.log(error) // Handle the error response object
+            );
+        }
+
+        const createOutputString = (functional,nonFunctional) => {
+            var start = 'Functional Requirements\n------------------------------------------------------------------\n\n'
+            var body = start
+            functional.forEach(element => {
+                body += element + '\n'
+            });
+            body += '\n\nNon Functional Requirements\n------------------------------------------------------------------\n\n'
+            nonFunctional.forEach(element => {
+                body += element + '\n'
+            });
+            return body
+        }
+    </script>
+
+    <script>
+        const processUmlGen = () => {
+            var formData = new FormData();
+            var functional = []
+            var nonFunctional = []
+            var transcriptFile = document.querySelector('#scenarioFile');
+            formData.append("scenarioFile", transcriptFile.files[0]);
+            fetch('http://localhost:5000/process-uml-diagrams-inputs', { // Your POST endpoint
+                method: 'POST',
+                body:formData // This is your file object
+            }).then(response => response.json())
+            .then((response) => {
+                console.log('generated_class_diagram_path',response.generated_class_diagram_path)
+                console.log('generated_usecase_diagram_path',response.generated_usecase_diagram_path)
+
+                useCasePath = 'http://localhost:5000/view-diagram/'+response.generated_usecase_diagram_path
+                classPath = 'http://localhost:5000/view-diagram/'+response.generated_class_diagram_path
+                activityPath = 'http://localhost:5000/view-diagram/'+response.generated_activity_diagram_path
+
+                $("#useCaseImgTag").attr("src", useCasePath);
+                $("#useCaseDownloadBtn").attr("href", useCasePath);
+
+                $("#classDiagramImgTag").attr("src", classPath);
+                $("#classDiagramDownloadBtn").attr("href", classPath);
+
+                $("#activityDiagramImgTag").attr("src", activityPath);
+                $("#activityDiagramDownloadBtn").attr("href", activityPath);
+
+            }).catch(
+                error => console.log(error) // Handle the error response object
+            );
+        }
+    </script>
+
+<script>
+    $('#date1').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: "m/d/yy"
+    });
+</script>
+
+<script>
+    function download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+
+    // Start file download.
+    document.getElementById("dwn-btn").addEventListener("click", function () {
+        // Generate download of hello.txt file with some content
+        var text = document.getElementById("text-val").value;
+        var filename = "hello.txt";
+
+        download(filename, text);
+    }, false);
+</script>
+
+<script>
+    function downloadInnerHtml(filename, elId, mimeType) {
+        var elHtml = document.getElementById(elId).innerHTML;
+        var link = document.createElement('a');
+        mimeType = mimeType || 'text/plain';
+
+        link.setAttribute('download', filename);
+        link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
+        link.click();
+    }
+
+    var fileName = 'index.html'; // You can use the .txt extension if you want
+
+    $('#downloadLink').click(function () {
+        downloadInnerHtml(fileName, 'main', 'text/html');
+    });
+</script>
+
+<script>
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+
+<script>
+         function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+
+<script>
+    $(function() {
+            $("#sortableImgThumbnailPreview").sortable({
+             connectWith: ".RearangeBox",
+
+
+              start: function( event, ui ) {
+                   $(ui.item).addClass("dragElemThumbnail");
+                   ui.placeholder.height(ui.item.height());
+
+               },
+                stop:function( event, ui ) {
+                   $(ui.item).removeClass("dragElemThumbnail");
+               }
+            });
+            $("#sortableImgThumbnailPreview").disableSelection();
+        });
+
+
+
+
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+  function handleFileSelect(evt) {
+
+    var files = evt.target.files;
+    var output = document.getElementById("sortableImgThumbnailPreview");
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+           var imgThumbnailElem = "<div class='RearangeBox imgThumbContainer'><i class='material-icons imgRemoveBtn' onclick='removeThumbnailIMG(this)'>x</i><div class='IMGthumbnail' ><img  src='" + e.target.result + "'" + "title='"+ theFile.name + "'/></div><div class='imgName'>"+ theFile.name +"</div></div>";
+
+                    output.innerHTML = output.innerHTML + imgThumbnailElem;
+
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  function removeThumbnailIMG(elm){
+    elm.parentNode.outerHTML='';
+  }
+
+
+</script>
+
+<script>
+        function clearcontent(elementID) {
+            document.getElementById(elementID).innerHTML = "";
+        }
+</script>
+
+<script>
+    //paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".container-spin").fadeOut("slow");;
+	});
+</script>
+
+<script>
+function moveToSelected(element) {
+
+  if (element == "next") {
+    var selected = $(".selected").next();
+  } else if (element == "prev") {
+    var selected = $(".selected").prev();
+  } else {
+    var selected = element;
+  }
+
+  var next = $(selected).next();
+  var prev = $(selected).prev();
+  var prevSecond = $(prev).prev();
+  var nextSecond = $(next).next();
+
+  $(selected).removeClass().addClass("selected");
+
+  $(prev).removeClass().addClass("prev");
+  $(next).removeClass().addClass("next");
+
+  $(nextSecond).removeClass().addClass("nextRightSecond");
+  $(prevSecond).removeClass().addClass("prevLeftSecond");
+
+  $(nextSecond).nextAll().removeClass().addClass('hideRight');
+  $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+
+}
+
+// Eventos teclado
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+        moveToSelected('prev');
+        break;
+
+        case 39: // right
+        moveToSelected('next');
+        break;
+
+        default: return;
+    }
+    e.preventDefault();
+});
+
+$('#carousel div').click(function() {
+  moveToSelected($(this));
+});
+
+$('#prev').click(function() {
+  moveToSelected('prev');
+});
+
+$('#next').click(function() {
+  moveToSelected('next');
+});
+
+</script>
+
+    <script>
+var buttons = document.querySelectorAll( '.ladda-button' );
+
+Array.prototype.slice.call( buttons ).forEach( function( button ) {
+
+	var resetTimeout;
+
+	button.addEventListener( 'click', function() {
+
+		if( typeof button.getAttribute( 'data-loading' ) === 'string' ) {
+			button.removeAttribute( 'data-loading' );
+		}
+		else {
+			button.setAttribute( 'data-loading', '' );
+		}
+
+		clearTimeout( resetTimeout );
+		resetTimeout = setTimeout( function() {
+			button.removeAttribute( 'data-loading' );
+		}, 65000 );
+
+	}, false );
+
+} );
+    </script>
+
+
+</body>
+
+</html>
